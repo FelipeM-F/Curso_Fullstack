@@ -8,7 +8,7 @@ Este repositório contém uma série de exercícios de JavaScript para praticar 
 * Instale as dependências: No diretório do projeto, execute o seguinte comando para instalar as dependências necessárias:
 npm install prompt-sync
 * Execute os exercícios: No diretório do projeto, execute o seguinte comando para rodar o script JavaScript:
-node exercicios.js
+nodelista_1.js
 * Siga as instruções: Siga as instruções apresentadas no terminal para interagir com os exercícios. Você será solicitado a escolher um exercício da lista e fornecer entradas conforme necessário.
 ## Exercícios Disponíveis:
 1. Escreva um algoritmo para ler uma temperatura em graus Celsius, calcular e escrever o
