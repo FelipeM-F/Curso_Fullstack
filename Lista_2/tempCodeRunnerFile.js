@@ -1,14 +1,12 @@
- // matriz.forEach(linha => {
-    //     let cont=0;
-    //     for (let i = 0; i < linha.length; i++) {
-    //         if (linha[i] < 0) {
-    //             cont++;
-    //         }
+    // let apostadores = [];
+    // while (apostadores.length < 1) {
+    //     let apostador = {
+    //         Apostador: apostadores.length + 1,
+    //         Cartão: gerarNumeros()
     //     }
-    //     negativos.push(cont);
-    // });
-    // let index = 0;
-    // negativos.forEach(negativo => {
-    //     console.log('Index:',index,'-',negativo);
-    //     index++;
-    // });
+    //     apostadores.push(apostador);
+    // }
+    // apostadores.forEach((apostador) => {
+    //     apostador.Acertos = contarAcertos(gabarito, apostador.Cartão);
+    // })
+    // console.log('Apostadores: ', apostadores);

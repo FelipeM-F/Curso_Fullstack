@@ -15,7 +15,7 @@ function criarMatriz(linhas, colunas) {
 function imprimirMatriz(matriz) {
     matriz.forEach(linha => {    
         const linhaFormatada = linha.map(elemento => {
-            const elementoFormatado = String(elemento).padStart(3); 
+            const elementoFormatado = String(elemento).padStart(5); 
             return elementoFormatado;
           });
     console.log(`| ${linhaFormatada.join('  ')} |`);
@@ -783,3 +783,656 @@ function imprimirMatriz(matriz) {
     // console.log('=====================================')
     
 }
+
+{   // 30. Escrever um algoritmo que lê uma matriz M(5,5) e cria 2 vetores SL(5) e SC(5) que
+    // contenham, respectivamente, as somas das linhas e das colunas de M. Escrever a matriz
+    // e os vetores criados.
+
+    // let matriz = criarMatriz(5, 5);
+    // let vetorSomaLinha = [];
+    // let vetorSomaColuna = [];
+    // matriz.forEach((linha) => {
+    //     let somaLinha = 0;
+    //     linha.forEach((elemento, index) => {
+    //         somaLinha += elemento;
+    //         vetorSomaColuna[index] === undefined ? vetorSomaColuna.push(elemento) : vetorSomaColuna[index] += elemento;
+    //     })
+    //     vetorSomaLinha.push(somaLinha);
+    // })
+    // console.log(`Matriz original: `);
+    // imprimirMatriz(matriz);
+    // console.log('=====================================')
+    // console.log("SL:",vetorSomaLinha);
+    // console.log("SC:",vetorSomaColuna);
+}
+
+{   // 31. Escreva um algoritmo que leia um número inteiro A e uma matriz V 30 x 30 de inteiros.
+    // Conte quantos valores iguais a A estão na matriz. Crie, a seguir, uma matriz X contendo
+    // todos os elementos de V diferentes de A. Mostre os resultados.
+
+    // let numA = parseInt(prompt("Informe um valor inteiro para A:"));
+    // let matrizV = criarMatriz(30, 30);
+    // let vetorX = [];
+    // let cont = 0;
+    // matrizV.forEach((linha) => {
+    //     linha.forEach((elemento) => {
+    //         if (elemento !== numA) {
+    //             vetorX.push(elemento);
+    //         } else {
+    //             cont++;
+    //         }
+    //     })
+    // })
+    // console.log(`Matriz V: `);
+    // imprimirMatriz(matrizV);
+    // console.log('=====================================')
+    // console.log(`Vetor X: \n${vetorX.join('  ')}`);
+    // console.log('=====================================')
+    // console.log(`Quantidade de valores iguais a ${numA} na matriz V: ${cont}`);
+}
+
+{   // 32. Escrever um algoritmo que lê uma matriz M(12,13) e divida todos os 13 elementos de
+    // cada uma das 12 linhas de M pelo maior elemento em módulo daquela linha. Escrever a
+    // matriz lida e a modificada.
+
+    // let matriz = criarMatriz(12, 13);    
+    // console.log(`Matriz original: `);
+    // imprimirMatriz(matriz);
+    // imprimirMatriz(matriz);
+    // matriz.forEach((linha) => {
+    //     let valoresAbsolutos = linha.map(Math.abs);
+    //     let maior = Math.max(...valoresAbsolutos);
+    //     linha.forEach((elemento, index) => {
+    //         linha[index] = (elemento/maior).toFixed(2);
+    //     })
+    // })
+    // console.log('=====================================')
+    // imprimirMatriz(matriz);
+}
+
+{   // 33. Faça um algoritmo que leia uma matriz 3 x 3 e após a leitura, multiplique os
+    // elementos da diagonal principal com a média dos elementos da diagonal secundária.
+
+    // let matriz = criarMatriz(3, 3);
+    // let somaDiagonalSecundaria = 0;
+    // let mediaDiagonalSecundaria = 0;
+    // console.log('Matriz Orgininal:');
+    // imprimirMatriz(matriz);
+    // matriz.forEach((linha, indexM) => {
+    //     let indexDiagonalSecundaria = linha.length - 1 - indexM;
+    //     somaDiagonalSecundaria += linha[indexDiagonalSecundaria];        
+    //     mediaDiagonalSecundaria = (somaDiagonalSecundaria / linha.length);
+    // })
+    // mediaDiagonalSecundaria = mediaDiagonalSecundaria.toFixed(2);
+    // matriz.forEach((linha, indexM) => {
+    //     linha.forEach((elemento, index) => {
+    //         if (index === indexM) {
+    //             linha[index] = (elemento*mediaDiagonalSecundaria).toFixed(2);
+    //         }
+    //     })
+    // })    
+    // console.log('=====================================')
+    // console.log('Média da Diagonal Secundaria:', mediaDiagonalSecundaria);
+    // console.log('Matriz Modificada:');
+    // imprimirMatriz(matriz);
+}
+
+{   // 34. Faça um algoritmo que leia uma matriz 50 x 50 de números reais. A seguir, multiplique
+    // cada linha pelo elemento da diagonal principal daquela linha. Mostre a matriz após as
+    // multiplicações.
+
+    // let matriz = criarMatriz(3, 3);
+    // console.log('Matriz Orgininal:');
+    // imprimirMatriz(matriz);
+    // matriz.forEach((linha, indexM) => {
+    //     let multiplicador = linha[indexM];
+    //     linha.forEach((elemento, index) => {
+    //         linha[index] = elemento*multiplicador;
+    //     })
+    // })
+    // console.log('=====================================')
+    // console.log('Matriz Modificada:');
+    // imprimirMatriz(matriz);
+}
+
+{   // 35. Elaborar um algoritmo que leia um conjunto de 30 valores e os coloca em 2 vetores
+    // conforme forem pares ou ímpares. O tamanho do vetor é de 5 posições. Se algum vetor
+    // estiver cheio, escrevê-lo. Terminada a leitura, escrever o conteúdo dos dois vetores. Cada
+    // vetor pode ser preenchido quantas vezes forem necessárias.
+
+    // let valores = [];
+    // for (let i = 0; i < 30; i++) {
+    //   valores.push(Math.floor(Math.random() * 100)); // gerando 30 valores aleatórios para exemplificação
+    // }
+    // let vetorPares = [];
+    // let vetorImpares = [];
+    // console.log(`Valores: \n{ ${valores} }`);
+    // valores.forEach((elemento) => {
+    //   if (elemento % 2 === 0) {
+    //     vetorPares.push(elemento);
+    //   } else {
+    //     vetorImpares.push(elemento);
+    //   }
+    //   if (vetorPares.length === 5) {
+    //     console.log("Vetor Pares Cheio: ", vetorPares);
+    //     vetorPares = [];
+    //   }
+    //   if (vetorImpares.length === 5) {
+    //     console.log("Vetor Impares Cheio: ", vetorImpares);
+    //     vetorImpares = [];
+    //   }
+    // });
+    // console.log("Vetor Pares Restante: ", vetorPares);
+    // console.log("Vetor Impares Restante: ", vetorImpares);   
+
+}
+
+{   // 36. Escreva um algoritmo que leia um vetor de 13 elementos inteiros, que é o Gabarito de
+    // um teste da loteria esportiva. Leia, a seguir, para cada um dos 100 apostadores, o número
+    // do seu cartão e um vetor de Respostas de 13 posições. Verifique para cada apostador o
+    // número de acertos, comparando o vetor de Gabarito com o vetor de Respostas. Escreva
+    // o número do apostador e o número de acertos. Se o apostador tiver 13 acertos, mostrar a
+    // mensagem "Parabéns, tu foi o GANHADOR".
+
+    // function gerarNumeros(numerosParaApostar) {
+    //     let valores = [];
+    //     let tamanhoCartao = 13
+    //     while (valores.length < tamanhoCartao) {
+    //         let valor = Math.floor(Math.random() * numerosParaApostar + 1);
+    //         if (!valores.includes(valor)) {
+    //             valores.push(valor);
+    //         }
+    //     }
+    //     return valores;
+    // }
+    // function contarAcertos(gabarito, respostas) {
+    //     let cont = 0;
+    //     respostas.forEach((elemento) => {
+    //         if (gabarito.includes(elemento)) {
+    //             cont++;
+    //         }
+    //     })
+    //     return cont;
+    // }
+
+    // let numerosParaApostar = 15;
+    // let acertosParaGanhar = 13;
+    // let gabarito = gerarNumeros(numerosParaApostar);
+    // console.log('Gabarito: ', gabarito);
+    // let apostadores = [];
+    // while (apostadores.length < 100) {
+    //     let apostador = {
+    //         Apostador: apostadores.length + 1,
+    //         Cartão: gerarNumeros(numerosParaApostar)
+    //     }
+    //     apostadores.push(apostador);
+    // }
+    // apostadores.forEach((apostador) => {
+    //     apostador.Acertos = contarAcertos(gabarito, apostador.Cartão);
+    //     apostador.Acertos >= acertosParaGanhar ? apostador.Ganhador = "Parabéns, tu foi o GANHADOR" : ''
+    // })
+    // console.log('Apostadores: ', apostadores);
+}
+
+{   // 37. Escreva um algoritmo que leia um vetor G de 20 elementos caractere que representa
+    // o gabarito de uma prova. A seguir, para cada um dos 50 alunos da turma, leia o vetor de
+    // respostas (R) do aluno e conte o número de acertos. Mostre o número de acertos do
+    // aluno e uma mensagem “APROVADO” se a quantidade de acertos for maior ou igual a 12;
+    // e mostre uma mensagem de “REPROVADO”, caso contrário.
+    
+    // function gerarRespostas(){
+    //     let alternativas = ['a','b','c','d'];
+    //     let respostas = [];
+    //     while (respostas.length < 20) {
+    //         respostas.push(alternativas[Math.floor(Math.random() * alternativas.length)]);        
+    //     }
+    //     return respostas;
+    // }
+    // function contarAcertos(gabarito, respostas) {
+    //     let cont = 0;
+    //     respostas.forEach((elemento, index) => {
+    //         if (gabarito[index] === elemento) {
+    //             cont++;
+    //         }
+    //     })
+    //     return cont;
+    // }
+
+    // let gabarito = gerarRespostas();
+    // let provas = [];
+    // let acertosAprovacao = 12;
+    // while (provas.length < 50) {
+    //     let aluno = {
+    //         Id_Aluno: provas.length + 1,
+    //         Prova: gerarRespostas()
+    //     }
+    //     provas.push(aluno);
+    // }
+    // provas.forEach((aluno) => {
+    //     aluno.Acertos = contarAcertos(gabarito, aluno.Prova);
+    //     aluno.Acertos >= acertosAprovacao ? aluno.Resultado = "APROVADO" : aluno.Resultado = "REPROVADO";
+    // })
+    // console.log('Provas: ', provas);
+    // console.log('Gabarito: ', gabarito);
+}
+
+{   // 38. Elabore um algoritmo que leia um vetor de 6 posições e após sua leitura leia outra
+    // variável identificadora que calcule a operação conforme a informação contida nesta
+    // variável:
+    // 1- soma dos elementos;
+    // 2- produto dos elementos;
+    // 3- média dos elementos;
+    // 4- ordene os elementos em ordem crescente;
+    // 5- mostre o vetor.
+    
+    // let vetor = [6,5,4,3,2,1];
+    // let operacao = {
+    //     1: (vetor) => {
+    //         let soma = 0;
+    //         for (let i = 0; i < 6; i++) {
+    //             soma += vetor[i];
+    //         }
+    //         return soma;
+    //     },
+    //     2: (vetor) => {
+    //         let mult = 1;
+    //         for (let i = 0; i < 6; i++) {
+    //             mult *= vetor[i];
+    //         }
+    //         return mult;
+    //     },
+    //     3: (vetor) => {
+    //         let media = 0;
+    //         for (let i = 0; i < 6; i++) {
+    //             media += vetor[i];
+    //         }
+    //         return media / 6;
+    //     },
+    //     4: (vetor) => {
+    //         let vetorOriginal = [...vetor];
+    //         let vetorOrdenado = vetorOriginal.sort((a, b) => a - b);
+    //         return vetorOrdenado;
+    //     },
+    //     5: (vetor) => {
+    //         return vetor;
+    //     }   
+    // }
+
+    // console.log('Operações: 1 - Soma; 2 - Multiplicação; 3 - Média; 4 - Ordenação Crescente; 5 - Imprimir Vetor');
+    // let identificador = parseInt(prompt('Informe a operação desejada: '));
+
+    // while (identificador > 0 || identificador <6) {
+    //     console.log(operacao[identificador](vetor));
+    //     identificador = parseInt(prompt('Informe a operação desejada: '));
+    // }    
+    
+}
+
+{   // 39. Faça um algoritmo que leia um vetor (A) de 100 posições. Em seguida, compacte o
+    // vetor, retirando os valores nulos e negativos. Coloque o resultado no vetor B.
+
+    // let vetorA = criarMatriz(1,100)[0];
+    // console.log('Vetor A original: ',vetorA);
+    // let vetorB = vetorA.filter(elemento => elemento <= 0);
+    // vetorA = vetorA.filter(elemento => elemento > 0);
+    // console.log('Vetor A filtrado: ',vetorA);
+    // console.log('Vetor B: ',vetorB);
+}
+
+{   // 40. Faça um algoritmo que leia um vetor de 5 elementos inteiros, correspondentes ao
+    // resultado oficial da Loto. A seguir, leia 50 conjuntos de vetores (com 5 elementos inteiros
+    // cada), representando as apostas feitas. Compare os números das apostas com o
+    // resultado oficial e mostre uma mensagem ("Ganhador") se todos os números
+    // corresponderem ao resultado oficial. (Observação: não é necessário procurar por ternos
+    // e quadras, apenas por quinas.)
+
+    // function gerarNumeros(numerosParaApostar) {
+    //     let valores = [];
+    //     let tamanhoCartao = 5
+    //     while (valores.length < tamanhoCartao) {
+    //         let valor = Math.floor(Math.random() * numerosParaApostar + 1);
+    //         if (!valores.includes(valor)) {
+    //             valores.push(valor);
+    //         }
+    //     }
+    //     return valores;
+    // }
+    // function contarAcertos(gabarito, respostas) {
+    //     let cont = 0;
+    //     respostas.forEach((elemento) => {
+    //         if (gabarito.includes(elemento)) {
+    //             cont++;
+    //         }
+    //     })
+    //     return cont;
+    // }
+
+    // let numerosParaApostar = 40;
+    // let acertosParaGanhar = 5;
+    // let gabarito = gerarNumeros(numerosParaApostar);
+    // console.log('Gabarito: ', gabarito);
+    // let apostadores = [];
+    // while (apostadores.length < 50) {
+    //     let apostador = {
+    //         Apostador: apostadores.length + 1,
+    //         Cartão: gerarNumeros(numerosParaApostar)
+    //     }
+    //     apostadores.push(apostador);
+    // }
+    // apostadores.forEach((apostador) => {
+    //     apostador.Acertos = contarAcertos(gabarito, apostador.Cartão);
+    //     apostador.Acertos >= acertosParaGanhar ? apostador.Ganhador = "Ganhador" : ''
+    // })
+    // console.log('Apostadores: ', apostadores);
+}
+
+{   // 41. Dado o objeto pessoa com propriedades nome e idade, acesse e imprima o valor de
+    // idade. Adicione uma nova propriedade chamada email ao objeto pessoa que já possui
+    // nome e idade.
+
+    // let pessoa = {
+    //     nome: 'Ana',
+    //     idade: 20
+    // }
+    // console.log('Idade: ',pessoa.idade);
+    // pessoa.email = 'ana@example.com';
+    // console.log(pessoa);
+}
+
+{   // 42. Crie um objeto chamado dados que contém várias propriedades, incluindo números,
+    // strings e arrays. Escreva uma função que retorne um novo objeto apenas com as
+    // propriedades que são arrays.
+
+    // function arraysObject(objeto) {
+    //     let novoObjeto = {};
+    //     for (let propriedade in objeto) {
+    //         if (Array.isArray(objeto[propriedade])) {
+    //             novoObjeto[propriedade] = objeto[propriedade];
+    //         }
+    //     }
+    //     return novoObjeto;
+    // }
+
+    // let objetoOriginal = {
+    //     id: 1,
+    //     titulo: 'Objeto original',
+    //     numeros: [1, 2, 3, 4, 5],
+    //     strings: ['a', 'b', 'c'],
+    //     bools: [true, false, true],
+    //     outro: 'fim'
+    // }
+    // let objeto = arraysObject(objetoOriginal);
+    // console.log('Objeto original: ',objetoOriginal);
+    // console.log('Objeto de arrays: ',objeto);
+}
+
+{   // 43. Dado dois objetos, obj1 e obj2, escreva uma função que crie um novo objeto
+    // combinando as propriedades de ambos, onde as propriedades de obj2 têm precedência
+    // sobre as do obj1 em caso de conflitos.
+
+    // function combinarObjetos(obj1, obj2) {
+    //     let novoObjeto = {};
+    //     for (let propriedade in obj2) {
+    //         novoObjeto[propriedade] = obj2[propriedade];
+    //     }
+    //     for (let propriedade in obj1) 
+    //         if (!novoObjeto.hasOwnProperty(propriedade)) {
+    //             novoObjeto[propriedade] = obj1[propriedade];
+    //     }
+    //     return novoObjeto;
+    // }
+
+    // let obj1 = {
+    //     id: 1,
+    //     nome: 'Objeto 1',
+    //     email: 'objeto1@example.com',
+    //     propriedade1: 1,
+    // }
+    // let obj2 = {
+    //     id: 2,
+    //     nome: 'Objeto 2',
+    //     email: 'objeto2@example.com',
+    //     endereco: 'rua 1, 0'
+
+    // }
+    // let novoObjeto = combinarObjetos(obj1, obj2);
+    // console.log('Objeto 1: ',obj1);
+    // console.log('Objeto 2: ',obj2);
+    // console.log('Novo objeto: ',novoObjeto);
+}
+
+{   // 44. Escreva uma função que conte quantas propriedades do tipo string existem em um
+    // objeto e retorne esse número.
+
+    // function countStringProperties(object) {
+    //     let count = 0;
+    //     for (let propriedade in object) {
+    //         if (typeof object[propriedade] === 'string') {
+    //             count++;
+    //         }
+    //     }
+    //     return count;
+    // }
+
+    // let object = {
+    //     id: 1,
+    //     nome: 'Objeto 1',
+    //     email: 'objeto1@example.com',
+    //     propriedade1: 1,
+    //     propriedade2: 'string',
+    //     propriedade3: true,
+    // }
+
+    // console.log('Quantidade de propriedades string: ',countStringProperties(objeto));
+}
+
+{   // 45. Dado um array de strings, crie um objeto onde cada string é uma chave, e seu valor é
+    // o número de vezes que a string aparece no array.
+
+    // let array = ['a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c','d','b'];
+    // let objeto = {};
+    // for (let i = 0; i < array.length; i++) {
+    //     if (!objeto.hasOwnProperty(array[i])) {
+    //         objeto[array[i]] = 1;
+    //     } else objeto[array[i]]++;
+    // }
+    // console.log('Objeto: ',objeto);
+}
+
+{   // 46. Suponha que você tem um array de objetos onde cada objeto representa uma venda
+    // com vendedor e valor. Escreva uma função que retorne um objeto que sumarize o total
+    // de vendas por vendedor.
+
+    // function salesByVendor(sales) {
+    //     let object = {};
+    //     for (let i = 0; i < sales.length; i++) {
+    //         if (!object.hasOwnProperty(sales[i].vendor)) {
+    //             object[sales[i].vendor] = sales[i].value;
+    //         } else object[sales[i].vendor] += sales[i].value;
+    //     }
+    //     return object;
+    // }
+    // let sales = [
+    //     { vendor: 'vendor1', value: 100 },
+    //     { vendor: 'vendor2', value: 200 },
+    //     { vendor: 'vendor1', value: 300 },
+    //     { vendor: 'vendor3', value: 400 },
+    //     { vendor: 'vendor2', value: 500 },
+    //     { vendor: 'vendor3', value: 600 },
+    //     { vendor: 'vendor3', value: 700 },
+    //     { vendor: 'vendor4', value: 800 },
+    //     { vendor: 'vendor2', value: 300 },
+    // ]
+    // console.log(salesByVendor(sales));
+}
+
+{   // 47. Crie uma função que transforme um objeto de entrada aplicando uma função
+    // fornecida a cada uma das propriedades do objeto, retornando um novo objeto com os
+    // resultados.
+
+    // function transformersObject(object, apliedFunction) {
+    //     let novoObjeto = {};
+    //     for (let propriedade in object) {
+    //         console.log(object[propriedade]);
+    //         novoObjeto[propriedade] = apliedFunction(object[propriedade]);
+    //     }
+    //     return novoObjeto;
+    // }
+
+    // function multiplyByTwo(value) {
+    //     return value * 2;
+    // }
+
+    // let object = {
+    //     id: 12,
+    //     items: 5,
+    //     value: 100
+    // }
+    // let newObject = transformersObject(object, multiplyByTwo);
+    // console.log(newObject);
+}
+
+{   // 48. Você recebe dois objetos que representam o inventário de duas lojas diferentes:
+    // inventarioLojaA e inventarioLojaB. Cada chave é um item, e o valor é a quantidade desse
+    // item em estoque. Escreva uma função que combine os inventários em um único objeto.
+    // Se um item aparecer em ambas as lojas, some as quantidades.
+
+    // function combinarInventarios(inventarioLojaA, inventarioLojaB) {
+    //     let novoInventario = {};
+    //     for (let item in inventarioLojaA) {
+    //         if (!novoInventario.hasOwnProperty(item)) {
+    //             novoInventario[item] = inventarioLojaA[item];
+    //         } else {
+    //             novoInventario[item] += inventarioLojaA[item];
+    //         }
+    //     }
+    //     for (let item in inventarioLojaB) {
+    //         if (!novoInventario.hasOwnProperty(item)) {
+    //             novoInventario[item] = inventarioLojaB[item];
+    //         } else {
+    //             novoInventario[item] += inventarioLojaB[item];
+    //         }
+    //     }
+    //     return novoInventario;
+    // }
+
+    // let inventarioLojaA = { item1: 10, item2: 20, item3: 30 };
+    // let inventarioLojaB = { item3: 5, item4: 15, item5: 25, item1: 20 };
+
+    // console.log(combinarInventarios(inventarioLojaA, inventarioLojaB));
+}
+
+{   // 49. Você recebe um array de objetos representando transações financeiras. Cada
+    // transação possui id, valor, data, e categoria. Escreva uma função que retorne um objeto
+    // onde as chaves são as categorias, e os valores são arrays de transações pertencentes a
+    // essa categoria. Adicionalmente, inclua um subtotal de valores por categoria.
+
+    // function transacoesPorCategoria(transacoes) {
+    //     let object = {};
+    //     for (let i = 0; i < transacoes.length; i++) {
+    //         if (!object.hasOwnProperty(transacoes[i].categoria)) {
+    //             object[transacoes[i].categoria] = [transacoes[i]];
+    //         } else object[transacoes[i].categoria].push(transacoes[i]);
+    //     }
+    //     return object;
+    // }
+
+    // function subtotalPorCategoria(transacoes) {
+    //     let object = transacoesPorCategoria(transacoes);
+    //     for (let categoria in object) {
+    //         let subtotal = 0;
+    //         for (let i = 0; i < object[categoria].length; i++) {
+    //             subtotal += object[categoria][i].valor;
+    //         }
+    //         object[categoria] = subtotal;
+    //     }
+    //     return object;
+    // }
+
+    // const transacoes = [
+    //     {
+    //         id: 1,
+    //         valor: 150.00,
+    //         data: '2024-05-01',
+    //         categoria: 'Alimentação'
+    //     },
+    //     {
+    //         id: 2,
+    //         valor: 2000.00,
+    //         data: '2024-05-03',
+    //         categoria: 'Salário'
+    //     },
+    //     {
+    //         id: 3,
+    //         valor: 50.00,
+    //         data: '2024-05-05',
+    //         categoria: 'Transporte'
+    //     },
+    //     {
+    //         id: 4,
+    //         valor: 100.00,
+    //         data: '2024-05-07',
+    //         categoria: 'Lazer'
+    //     },
+    //     {
+    //         id: 5,
+    //         valor: 300.00,
+    //         data: '2024-05-10',
+    //         categoria: 'Saúde'
+    //     },
+    //     {
+    //         id: 6,
+    //         valor: 75.00,
+    //         data: '2024-05-12',
+    //         categoria: 'Alimentação'
+    //     },
+    //     {
+    //         id: 7,
+    //         valor: 150.00,
+    //         data: '2024-05-14',
+    //         categoria: 'Alimentação'
+    //     },
+    //     {
+    //         id: 8,
+    //         valor: 200.00,
+    //         data: '2024-05-16',
+    //         categoria: 'Lazer'
+    //     }        
+    // ];
+    // console.log(transacoesPorCategoria(transacoes));
+    // console.log(subtotalPorCategoria(transacoes));
+}
+
+{   // 50. Desenvolva um pequeno sistema de reserva de hotéis usando JavaScript. O sistema
+    // deverá ser capaz de interagir com o usuário através do console do navegador e manter
+    // um registro das reservas e hotéis disponíveis. Utilize objetos e arrays para gerenciar as
+    // informações. Não é necessário interface gráfica, apenas funcionalidade lógica.
+    // 1. Estrutura de Dados:
+    // ○ Hotel: Cada hotel deve ser um objeto com propriedades para id, nome,
+    // cidade, quartos totais e quartos disponiveis.
+    // ○ Reservas: Cada reserva deve ser um objeto contendo idReserva, idHotel, e
+    // nomeCliente.
+    // 2. Funcionalidades:
+    // ○ Adicionar hotéis: Permitir que o usuário adicione novos hotéis ao sistema.
+    // ○ Buscar hotéis por cidade: Permitir que o usuário liste todos os hotéis
+    // disponíveis em uma cidade específica.
+    // ○ Fazer reserva: Permitir que um usuário faça uma reserva em um hotel. Isso
+    // deve diminuir o número de quartos disponiveis do hotel.
+    // ○ Cancelar reserva: Permitir que um usuário cancele uma reserva. Isso deve
+    // aumentar o número de quartos disponiveis no hotel correspondente.
+    // ○ Listar reservas: Mostrar todas as reservas, incluindo detalhes do hotel e do
+    // cliente.
+    // 3. Regras de Negócio:
+    // ○ Um hotel só pode aceitar reservas se houver quartos disponíveis.
+    // ○ As reservas devem ser identificadas por um ID único e associadas a um
+    // único hotel.
+
+    // 4. Desafios Adicionais (Opcionais):
+    // ○ Implementar uma função de check-in e check-out que atualize a
+    // disponibilidade de quartos.
+    // ○ Gerar relatórios de ocupação para um hotel.
+    // ○ Permitir que o usuário avalie o hotel após a estadia, e armazenar essas
+    // avaliações dentro do objeto do hotel.
+}
+
+
