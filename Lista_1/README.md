@@ -2,7 +2,7 @@
 
 Este repositório contém uma série de exercícios de JavaScript para praticar lógica de programação e familiarizar-se com a linguagem.
 
-## Como Usar:
+## Como Rodar o projeto:
 * Instale o Node.js: Se você ainda não tiver o Node.js instalado em seu computador, baixe e instale a versão adequada para o seu sistema operacional em https://nodejs.org/
 * Baixar ou clonar este repositório
 * Instale as dependências: No diretório do projeto, execute o seguinte comando para instalar as dependências necessárias:
