@@ -41,7 +41,7 @@ Este repositório contém uma série de exercícios de JavaScript para praticar 
 npm install prompt-sync
 * Execute os exercícios: No diretório do projeto, execute o seguinte comando para rodar o script JavaScript:
 node lista_2.js
-* Siga as instruções: Siga as instruções apresentadas no terminal para interagir com os exercícios. Você será solicitado a escolher um exercício da lista e fornecer entradas conforme necessário.
+* Siga as instruções apresentadas no terminal para interagir com os exercícios. Você será solicitado a escolher um exercício da lista e fornecer entradas conforme necessário.
 ## Exercícios Disponíveis:
 
 1. Calcular a redução do tempo de vida de um fumante
