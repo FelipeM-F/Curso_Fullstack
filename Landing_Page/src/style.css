@@ -1,60 +1,150 @@
+/* Estilos CSS aqui */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+        padding: 0;
 }
+
 header {
     background-color: #333;
     color: white;
-    padding: 1em 0;
     text-align: center;
+    padding: 10px;
+    position: relative;
+    margin-bottom: 20px;
 }
+
+header h1 {
+    margin: 0;
+    color: white;
+    position: relative;
+}
+
+header i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-40%);
+    color: white;
+    font-size: medium;
+    cursor: pointer;
+}
+
+#user-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 20px;
+    top: 50px;
+    background-color: #444;
+    border: 1px solid #333;
+    width: 150px;
+}
+
+#user-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #333;
+}
+
+#user-menu li:last-child {
+    border-bottom: none;
+}
+
+#user-menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+#user-menu li:hover {
+    background-color: #555;
+}
+
+.hidden {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 main {
-    padding: 2em;
+    width: 100%;
+    overflow: hidden;
 }
-form {
-    margin-bottom: 2em;
+
+aside {
+    max-width: 250px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+    float: left;
 }
-#resultado {
-    margin-top: 2em;
+
+section#jogos {
+    margin-left: 270px;
+    padding: 20px;
 }
+
 .game-card {
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2em;
+    margin-top: 16px;
+    margin-bottom: 16px;
     overflow: hidden;
-    text-align: center; /* Centraliza o conteúdo dentro do card */
 }
 
 .game-card img {
-    width: 20%; /* Largura fixa da imagem */
-    height: 20%; /* Altura fixa da imagem */
+    margin-top: px;
+    height: 100px;
     object-fit: cover;
-    object-position: center; /* Centraliza a imagem */
-    display: block; /* Garante que a imagem seja exibida como bloco */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin-right: 20px;
+    float: left;
 }
 
 .game-details {
-    padding: 1em;
+    float: left;
+    width:initial;
 }
-.game-title {
-    font-size: 1.2em;
-    margin: 0 0 1em 0;
+
+#pagination {
+    text-align: center;
+    margin-top: 20px;
 }
-.game-prices {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+
+.pagination-button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
-.game-prices li {
-    background-color: #f9f9f9;
-    padding: 0.5em;
-    border-bottom: 1px solid #ddd;
+
+.pagination-button:disabled {
+    background-color: #999;
+    cursor: not-allowed;
 }
-.game-prices li:last-child {
-    border-bottom: none;
+
+.game-title{
+    vertical-align: middle;
+    display: inline-block;
 }
+
+i{
+    font-size: medium;
+    padding-left: 15px;
+    float: right;
+}
+
+.fa-star {
+    color: rgb(182, 178, 178);
+}
+
+.favorite {
+    color: rgb(240, 240, 13);
+}
+
 

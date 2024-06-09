@@ -1,58 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comparador de Preços de Jogos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
+
 <body>
     <header>
-        <h1>Comparador de Preços de Jogos</h1>
+        <h1>
+            Comparador de Preços de Jogos
+            <i class="fa-solid fa-user" id="user-icon"></i>
+        </h1>
+        <ul id="user-menu" class="hidden">
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
     </header>
     <main>
-        <form action="">
-            <label for="nome-jogo">Nome do Jogo:</label>
-            <input type="text" id="nome-jogo" name="nome-jogo">
-            <button type="submit">Buscar</button>
-        </form>
-        <div id="resultado">
-            <div class="game-card">
-                <img class= "capa" src="src\images\Red_Dead_Redemption_II.capa.jpg" alt="Capa do Red Dead Redemption II">
-                <div class="game-details">
-                    <h2 class="game-title">Red Dead Redemption II</h2>
-                    <ul class="game-prices">
-                        <li>Steam: R$ 119,96</li>
-                        <li>Epic Games: R$ 119,96</li>
-                    </ul>
-                </div>
+        <aside>
+            <h2>Filtros</h2>
+            <form id="filter-form">
+                <fieldset>
+                    <legend>Loja</legend>
+                    <label><input type="checkbox" name="store" value="Steam"> Steam</label><br>
+                    <label><input type="checkbox" name="store" value="Epic Games"> Epic Games</label><br>
+                    <label><input type="checkbox" name="store" value="GOG"> GOG</label><br>
+                    <label><input type="checkbox" name="store" value="Microsoft Store"> Microsoft Store</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Preço</legend>
+                    <label><input type="radio" name="price" value="low"> Menor que R$ 50,00</label><br>
+                    <label><input type="radio" name="price" value="medium"> R$ 50,00 - R$ 100,00</label><br>
+                    <label><input type="radio" name="price" value="high"> Maior que R$ 100,00</label>
+                </fieldset>
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+        </aside>
+        <section id="jogos">
+            <form id="search-form">
+                <label for="nome-jogo">Nome do Jogo:</label>
+                <input type="text" id="nome-jogo" name="nome-jogo">
+                <button type="submit">Buscar</button>
+            </form>
+            <div id="resultado">
+                <!-- Jogos serão inseridos aqui via JavaScript -->
             </div>
-            <div class="game-card">
-                <img class= "capa" src="src\images\Grand_Theft_Auto_V_capa.png" alt="Capa do GTA V">
-                <div class="game-details">
-                    <h2 class="game-title">GTA V</h2>
-                    <ul class="game-prices">
-                        <li>Steam: R$ 99,99</li>
-                        <li>Epic Games: R$ 79,99</li>
-                    </ul>
-                </div>
+            <div id="pagination">
+                <!-- Paginação será inserida aqui via JavaScript -->
             </div>
-            <div class="game-card">
-                <img src="caminho/para/capa_minecraft.jpg" alt="Capa do Minecraft">
-                <div class="game-details">
-                    <h2 class="game-title">Minecraft</h2>
-                    <ul class="game-prices">
-                        <li>Minecraft.net: R$ 119,99</li>
-                        <li>Microsoft Store: R$ 99,99</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
+
     <footer>
         <p>Desenvolvido por <a href="https://github.com/felipem-f">Felipe</a></p>
     </footer>
+    <script src="app.js"></script>
 </body>
+
 </html>
-
-
