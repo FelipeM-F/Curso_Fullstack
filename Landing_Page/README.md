@@ -20,10 +20,8 @@ A página inicial do projeto exibe alguns jogos em destaque, cada um com sua cap
 ## Como Usar
 
 1. Clone o repositório:
-    ```
 
 2. Navegue até o diretório do projeto:
-    ```
 
 3. Abra o arquivo `index.html` no seu navegador de preferência.
 
