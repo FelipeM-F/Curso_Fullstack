@@ -110,23 +110,14 @@ section#jogos {
 }
 
 #pagination {
-    text-align: center;
+    text-align:center;
     margin-top: 20px;
 }
 
-.pagination-button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
+#pagination a {
+    padding-inline: 10px;
 }
 
-.pagination-button:disabled {
-    background-color: #999;
-    cursor: not-allowed;
-}
 
 .game-title{
     vertical-align: middle;
