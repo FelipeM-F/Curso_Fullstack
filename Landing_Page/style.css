@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+main {
+    padding: 2em;
+}
+form {
+    margin-bottom: 2em;
+}
+#resultado {
+    margin-top: 2em;
+}
+.game-card {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+    overflow: hidden;
+    text-align: center; /* Centraliza o conteúdo dentro do card */
+}
+
+.game-card img {
+    width: 20%; /* Largura fixa da imagem */
+    height: 20%; /* Altura fixa da imagem */
+    object-fit: cover;
+    object-position: center; /* Centraliza a imagem */
+    display: block; /* Garante que a imagem seja exibida como bloco */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.game-details {
+    padding: 1em;
+}
+.game-title {
+    font-size: 1.2em;
+    margin: 0 0 1em 0;
+}
+.game-prices {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.game-prices li {
+    background-color: #f9f9f9;
+    padding: 0.5em;
+    border-bottom: 1px solid #ddd;
+}
+.game-prices li:last-child {
+    border-bottom: none;
+}
+
