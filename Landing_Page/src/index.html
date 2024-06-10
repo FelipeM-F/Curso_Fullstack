@@ -12,10 +12,36 @@
 
 <body>
     <header>
+        <div class="logo">
+            <img src="logo.png" alt="GamePrice Tracker Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Jogos</a></li>
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
         <h1>
-            Comparador de Preços de Jogos
+            GamePrice Tracker
             <i class="fa-solid fa-user" id="user-icon"></i>
         </h1>
+
+
+        <div class="user-options">
+            <!-- <i class="fa-solid fa-bell"></i> -->
+            <!-- <i class="fa-solid fa-heart"></i> -->
+            <div class="dropdown">
+                <!-- <i class="fa-solid fa-globe"></i> -->
+                <div class="dropdown-content">
+                    <a href="#">EN</a>
+                    <a href="#">PT</a>
+                    <a href="#">ES</a>
+                </div>
+            </div>
+            <!-- <i class="fa-solid fa-shopping-cart"></i> -->
+        </div>
         <ul id="user-menu" class="hidden">
             <li><a onclick="openModal()">Login</a></li>
             <li><a href="#">Perfil</a></li>
@@ -26,6 +52,8 @@
     <main>
 
         <div id="modal" class="modal">
+            <button type="button" class="button close-modal" onclick="closeModal()">X</button>
+
             <div id="register-form" class="modal-form">
                 <input type="text" id="nickname" name="nickname" placeholder="Username" required />
                 <input type="email" id="email" name="email" placeholder="E-mail" required />
@@ -37,9 +65,9 @@
                 <input type="email" id="loginEmail" name="loginEmail" placeholder="E-mail" required />
                 <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required />
 
-                <button class="button" onclick="performLogin()">Entrar</button>
+                <button type="submit" class="button" onclick="performLogin()">Entrar</button>
             </div>
-            <button class="close-modal" onclick="closeModal()">Fechar</button>
+
         </div>
         <aside>
             <h2>Filtros</h2>

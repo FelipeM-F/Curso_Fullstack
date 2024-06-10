@@ -94,19 +94,51 @@ section#jogos {
   margin-top: 16px;
   margin-bottom: 16px;
   overflow: hidden;
+  position: relative;
+  display: table;
+  width: 100%;
 }
 
-.game-card img {
-  margin-top: px;
+.img-container, .game-details, .price-history {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.img-container {
+  padding: 10px;
+}
+
+.img-container img {
   height: 100px;
   object-fit: cover;
-  margin-right: 20px;
-  float: left;
 }
 
 .game-details {
-  float: left;
-  width: initial;
+  width: 40%;
+  padding: 10px;
+}
+
+.fa-star {
+  padding: 20px;
+  color: rgb(182, 178, 178);
+}
+
+.favorite {
+  color: rgb(240, 240, 13);
+}
+
+.price-history {
+  width: 40%;
+  padding: 10px;
+  text-align: center;
+}
+
+.min-price {
+  font-size: medium;
+}
+
+.price-history .slider-container {
+  margin-top: 10px;
 }
 
 #pagination {
@@ -118,10 +150,7 @@ section#jogos {
   padding-inline: 10px;
 }
 
-.game-title {
-  vertical-align: middle;
-  display: inline-block;
-}
+
 
 i {
   font-size: medium;
@@ -129,24 +158,16 @@ i {
   float: right;
 }
 
-.fa-star {
-  color: rgb(182, 178, 178);
-}
-
-.favorite {
-  color: rgb(240, 240, 13);
-}
-
-
 .modal {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  /* display: none; */
+  transform: translate(-50%, -40%);
+  display: none;
   background: #010a13a0;
   box-shadow: 0px 4px 18px #5681b0;
   padding: 60px;
+  
 }
 
 .modal-form {
@@ -182,3 +203,40 @@ i {
     border: 2px solid #0397AB; 
     box-shadow: 0 0 10px 5px rgba(3, 151, 171, 0.5); 
 }
+
+.close-modal {
+    position: absolute;  
+    top: 10px;
+    right: 10px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 20px;
+    line-height: 24px;    
+    text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px;
+  text-align: center; /* Centraliza os itens dentro do nav */
+}
+
+nav ul li {
+  display: inline-block;
+   /* Ajuste este valor conforme necessário */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.logo {
+  margin-bottom: 15px;
+}
+
