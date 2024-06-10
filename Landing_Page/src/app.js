@@ -116,3 +116,30 @@ document.getElementById('user-icon').addEventListener('click', () => {
 
 // Inicializa a exibição com a primeira página
 displayGames(currentPage);
+
+function openModal() {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'block';
+    const userMenu = document.getElementById('user-menu');
+    userMenu.classList.toggle('hidden');
+    userMenu.classList.toggle('show');
+
+    modal.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+}
+function closeModal() {
+    const closeBtn = document.getElementById('modal');
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+}
+
+const modal = document.getElementById('modal');
+window.addEventListener('click', (e) => {
+    if (e.target !== modal) {
+        modal.style.display = 'none';
+    }
+});
