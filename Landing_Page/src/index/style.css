@@ -40,6 +40,7 @@ header i {
   background-color: #444;
   border: 1px solid #333;
   width: 150px;
+  z-index: 1;
 }
 
 #user-menu li {
@@ -74,84 +75,6 @@ main {
   overflow: hidden;
 }
 
-aside {
-  max-width: 250px;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-right: 1px solid #ddd;
-  float: left;
-}
-
-section#jogos {
-  margin-left: 270px;
-  padding: 20px;
-}
-
-.game-card {
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 16px;
-  margin-bottom: 16px;
-  overflow: hidden;
-  position: relative;
-  display: table;
-  width: 100%;
-}
-
-.img-container, .game-details, .price-history {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-.img-container {
-  padding: 10px;
-}
-
-.img-container img {
-  height: 100px;
-  object-fit: cover;
-}
-
-.game-details {
-  width: 40%;
-  padding: 10px;
-}
-
-.fa-star {
-  padding: 20px;
-  color: rgb(182, 178, 178);
-}
-
-.favorite {
-  color: rgb(240, 240, 13);
-}
-
-.price-history {
-  width: 40%;
-  padding: 10px;
-  text-align: center;
-}
-
-.min-price {
-  font-size: medium;
-}
-
-.price-history .slider-container {
-  margin-top: 10px;
-}
-
-#pagination {
-  text-align: center;
-  margin-top: 20px;
-}
-
-#pagination a {
-  padding-inline: 10px;
-}
-
-
-
 i {
   font-size: medium;
   padding-left: 15px;
@@ -167,7 +90,7 @@ i {
   background: #010a13a0;
   box-shadow: 0px 4px 18px #5681b0;
   padding: 60px;
-  
+  z-index: 1;
 }
 
 .modal-form {
@@ -240,3 +163,75 @@ nav ul li a {
   margin-bottom: 15px;
 }
 
+
+.container {
+  width: 100%;
+  min-height: 400px;
+  margin: 0 auto;
+  background-image: url('../images/Red_Dead_Redemption_II.board.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;  
+  overflow: hidden; /* Added this line */
+  position: relative;
+}
+.cards{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+
+.card {
+  width: 100px;
+  height: 100px;
+  margin: 10px; /* Adjust margin for spacing */
+  border-radius: 10px;
+  overflow: hidden;
+  display: inline-block;  
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover {
+  opacity: 1;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* Add the .clearfix class after the last card in each row */
+.container .row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.logos {
+  width: 50px;
+  height: 50px;
+}
+
+
+#steam {
+  background: linear-gradient(135deg, #153667 0%, #131c2a 100%);
+}
+
+#epic {
+  background: linear-gradient(135deg, #313131 0%, #1c1c1c 100%);
+}
+
+#rockstar {
+  background: linear-gradient(135deg, #e5bc03 0%, #f0c505 100%);
+}
+
+#nuuvem {
+  background: linear-gradient(135deg, #527583 0%, #0076a3 100%);
+}
+
+.card-content img{
+  transform: translate(10%, 10%);
+}
