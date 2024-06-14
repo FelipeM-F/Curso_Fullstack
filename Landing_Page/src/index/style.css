@@ -1,78 +1,24 @@
+@import url('../header/header.css');
 /* Estilos CSS aqui */
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  background-color: #4c558b;
+  margin: 0 auto;
 }
 
-header {
-  background-color: #333;
-  color: white;
+
+
+#footer-container {
+  margin: 20px auto;
+  position: relative;
   text-align: center;
-  padding: 10px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-header h1 {
-  margin: 0;
-  color: white;
-  position: relative;
-}
-
-header i {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-40%);
-  color: white;
-  font-size: medium;
-  cursor: pointer;
-}
-
-#user-menu {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  right: 20px;
-  top: 50px;
-  background-color: #444;
-  border: 1px solid #333;
-  width: 150px;
-  z-index: 1;
-}
-
-#user-menu li {
-  padding: 10px;
-  border-bottom: 1px solid #333;
-}
-
-#user-menu li:last-child {
-  border-bottom: none;
-}
-
-#user-menu a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
-
-#user-menu li:hover {
-  background-color: #555;
-}
-
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
 }
 
 main {
-  width: 100%;
+  width: 90%;
   overflow: hidden;
+  margin: 0 auto;
+  border-radius: 15px;
 }
 
 i {
@@ -141,34 +87,25 @@ i {
     text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 10px;
-  text-align: center; /* Centraliza os itens dentro do nav */
-}
 
-nav ul li {
-  display: inline-block;
-   /* Ajuste este valor conforme necessário */
-}
-
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  padding: 10px;
-}
 
 .logo {
   margin-bottom: 15px;
 }
 
-
-.container {
-  width: 100%;
-  min-height: 400px;
+#search-form{
+  position: relative;
   margin: 0 auto;
-  background-image: url('../images/Red_Dead_Redemption_II.board.jpg');
+  text-align: center;
+  margin-bottom: 20px;
+}
+.container {
+  max-width: 100%;
+  min-height: 330px;
+  margin: 0 auto;
+  background-image: url('../images/ghost-of-tsushima-poster.jpg');
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;  
@@ -193,10 +130,17 @@ nav ul li a {
   display: inline-block;  
   opacity: 0.4;
   transition: opacity 0.3s ease;
+  color: rgba(255, 255, 255, 0);
+  text-align: center;
 }
 
+.card p {
+  font-weight: bold;
+  vertical-align: bottom;
+}
 .card:hover {
   opacity: 1;
+  color: white;
 }
 
 .clearfix {
@@ -234,4 +178,58 @@ nav ul li a {
 
 .card-content img{
   transform: translate(10%, 10%);
+}
+.info {
+  height: 50%;
+  background-color: rgb(238,247,254);
+}
+.info-content,
+.info-image {
+    width: 5px auto;
+    display: inline-block;
+    vertical-align: middle;
+    width: 49%;
+}
+
+.info-content p {
+    margin: 10px 20px;
+    font-size:medium;
+    line-height: 1.5;
+}
+
+.info-image img {	
+    width: 110%;
+    display: block;
+}
+
+.info2 {
+  height: 50%;
+  background-color: rgb(197,230,249);
+}
+
+.info-content :hover{
+  cursor: pointer;
+}
+
+.info-image2 img {	
+  width: 110%;
+  display: block;
+}
+
+.cadastro {  
+  color: #d81818;
+  background-color: #fff0f0;
+  text-align: center;
+  padding: 5px 10px;
+  border: 2px solid #d04c0f;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform 0.8s, background-color 0.2s;
+}
+
+.cadastro:hover {
+  transform: scale(1.1);
+  cursor: pointer;
 }

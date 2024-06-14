@@ -31,50 +31,57 @@
             </div>
         </div>
 
-        <section id="jogos">
-            <form id="search-form">
-                <label for="nome-jogo">Nome do Jogo:</label>
-                <input type="text" id="nome-jogo" name="nome-jogo">
-                <button type="submit">Buscar</button>
-            </form>
-            <div id="resultado">
-                <!-- Jogos serão inseridos aqui via JavaScript -->
-            </div>
-            <div id="pagination">
-                <!-- Paginação será inserida aqui via JavaScript -->
-            </div>
-        </section>
+
+        <form id="search-form">
+            <label for="nome-jogo">Nome do Jogo:</label>
+            <input type="text" id="nome-jogo" name="nome-jogo">
+            <button type="submit">Buscar</button>
+        </form>
 
         <div class="container">
             <div class="cards">
                 <div class="card" id="steam">
                     <div class="card-content">
                         <img class="logos" src="../images/logos/steam.png" alt="Steam">
-                        <a>R$ 119,96</a>
+                        <p>R$ 119,96</p>
                     </div>
                 </div>
                 <div class="card" id="epic">
                     <div class="card-content">
                         <img class="logos" src="../images/logos/epic.png" alt="Epic">
-                        <a>119,96</a>
-                    </div>
-                </div>
-                <div class="card" id="rockstar">
-                    <div class="card-content">
-                        <img class="logos" src="../images/logos/rockstar.png" alt="rockstar">
-                        <a>R$ 300,00</a>
+                        <p>R$ 119,96</p>
                     </div>
                 </div>
                 <div class="card" id="nuuvem">
                     <div class="card-content">
                         <img class="logos" src="../images/logos/nuuvem.png" alt="nuuvem">
+                        <p>R$ 299,90</p>
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="container-info">
+
+
+    <div class="info">
+        <div class="info-content">
+            <p>Descubra os melhores preços dos jogos que você mais adora. Busque seus jogos favoritos em um só lugar e compare os preços com as principais lojas do mercado. Descobra onde você pode encontrar os melhores descontos.</p>
+        </div>
+        <div class="info-image">
+            <img src="../images/imagens-geradas/info-img.png" alt="info">
+        </div>
+    </div>
+    <div class="info info2">
+        <div class="info-image info-image2">
+            <img src="../images/imagens-geradas/register-image.png" alt="info">
+        </div>
+        <div class="info-content">
+            <p >Cadastre-separa aproveitar todas as vantagens do nosso site! Adicione seus jogos favoritos à sua lista pessoal, receba alertas de preços especiais e acesse ofertas exclusivas. Não perca nenhuma promoção e fique sempre atualizado com as melhores opções do mercado.</p>
+            <p class="cadastro" onclick="openModal()">Cadastre-se agora </p>
+        </div>
+    </div>
     </main>
-
-
 
     <div id="footer-container"></div>
     <script>
