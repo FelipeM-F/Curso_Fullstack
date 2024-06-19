@@ -139,8 +139,8 @@ nav ul li a {
   text-decoration: none;
 }
 
-
 .modal {
+  max-width:min-content;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -153,8 +153,9 @@ nav ul li a {
 }
 
 .modal-form {
-    gap: 15px;
     margin-bottom: 55px;
+    display: block;
+    text-align: center;
 }
 
 .modal-form input {
@@ -169,7 +170,6 @@ nav ul li a {
 
 
 .button {
-    margin: 0;
     margin-top: 20px;
     border: 2px;
     border-radius: 10px;

@@ -183,6 +183,12 @@ function displayGames(page) {
 
 function toggleFavorite(icon) {
     icon.classList.toggle('favorite');
+
+    if (icon.classList.contains('favorite')) {
+        alert('Jogo adicionado aos favoritos!');
+    } else {
+        alert('Jogo removido dos favoritos!');
+    };
 }
 
 function displayPagination() {
@@ -213,9 +219,9 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
     const filteredGames = games.filter(game => game.title.toLowerCase().includes(searchQuery));
     
     if (filteredGames.length > 0) {
-        games.length = 0; // Clear the current games array
-        games.push(...filteredGames); // Add the filtered games to the array
-        currentPage = 1; // Reset to the first page
+        games.length = 0;
+        games.push(...filteredGames);
+        currentPage = 1; 
         displayGames(currentPage);
     } else {
         const resultado = document.getElementById('resultado');
@@ -227,25 +233,24 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
 
 
 
-// Inicializa a exibição com a primeira página
 displayGames(currentPage);
 
-function openModal() {
-    const modal = document.getElementById('modal');
+function openModal(modalId) {
+    const modal = document.getElementById(modalId);
     modal.style.display = 'block';
-    const userMenu = document.getElementById('user-menu');
-    userMenu.classList.toggle('hidden');
-    userMenu.classList.toggle('show');
+    
+    if (modalId === 'modal') {
+        const userMenu = document.getElementById('user-menu');
+        userMenu.classList.toggle('hidden');
+        userMenu.classList.toggle('show');
+    }
 
     modal.addEventListener('click', () => {
         modal.style.display = 'block';
     });
 }
-function closeModal() {
-    const closeBtn = document.getElementById('modal');
 
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display = 'none';
 }
