@@ -185,10 +185,26 @@ function toggleFavorite(icon) {
     icon.classList.toggle('favorite');
 
     if (icon.classList.contains('favorite')) {
-        alert('Jogo adicionado aos favoritos!');
+        document.getElementById('message').innerText = 'Jogo adicionado aos favoritos!';
+        openModalWithAutoClose('Jogo adicionado aos favoritos!'); // Chama a função para abrir o modal com mensagem e fechar automaticamente
+        // Você pode adicionar mais ações aqui, se necessário
     } else {
-        alert('Jogo removido dos favoritos!');
-    };
+        document.getElementById('message').innerText = 'Jogo adicionado aos favoritos!';
+        openModalWithAutoClose('Jogo removido dos favoritos!');
+        // Se desejar, adicione ações quando um jogo for removido dos favoritos
+    }
+}
+
+function openModalWithAutoClose(message) {
+    const modal = document.getElementById('modal-message');
+    const modalMessage = document.getElementById('message');
+
+    modalMessage.textContent = message;
+    modal.style.display = 'block';
+
+    setTimeout(() => {
+        closeModal('modal-message');
+    }, 1000);
 }
 
 function displayPagination() {
@@ -245,9 +261,6 @@ function openModal(modalId) {
         userMenu.classList.toggle('show');
     }
 
-    modal.addEventListener('click', () => {
-        modal.style.display = 'block';
-    });
 }
 
 function closeModal(modalId) {

@@ -22,7 +22,6 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
 
 
 function openModal(modalId) {
-    console.log(document.getElementById(modalId))
     const modal = document.getElementById(modalId);
     modal.style.display = 'block';
     
@@ -31,10 +30,7 @@ function openModal(modalId) {
         userMenu.classList.toggle('hidden');
         userMenu.classList.toggle('show');
     }
-
-    modal.addEventListener('click', () => {
-        modal.style.display = 'block';
-    });
+ 
 }
 
 function closeModal(modalId) {
