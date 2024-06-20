@@ -21,21 +21,4 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
 
 
 
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'block';
-    
-    if (modalId === 'modal') {
-        const userMenu = document.getElementById('user-menu');
-        userMenu.classList.toggle('hidden');
-        userMenu.classList.toggle('show');
-    }
- 
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none';
-}
-
 

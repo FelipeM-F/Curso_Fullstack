@@ -185,11 +185,11 @@ function toggleFavorite(icon) {
     icon.classList.toggle('favorite');
 
     if (icon.classList.contains('favorite')) {
-        document.getElementById('message').innerText = 'Jogo adicionado aos favoritos!';
+        document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
         openModalWithAutoClose('Jogo adicionado aos favoritos!'); // Chama a função para abrir o modal com mensagem e fechar automaticamente
         // Você pode adicionar mais ações aqui, se necessário
     } else {
-        document.getElementById('message').innerText = 'Jogo adicionado aos favoritos!';
+        document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
         openModalWithAutoClose('Jogo removido dos favoritos!');
         // Se desejar, adicione ações quando um jogo for removido dos favoritos
     }
@@ -197,7 +197,7 @@ function toggleFavorite(icon) {
 
 function openModalWithAutoClose(message) {
     const modal = document.getElementById('modal-message');
-    const modalMessage = document.getElementById('message');
+    const modalMessage = document.getElementById('message-text');
 
     modalMessage.textContent = message;
     modal.style.display = 'block';
@@ -251,19 +251,4 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
 
 displayGames(currentPage);
 
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'block';
-    
-    if (modalId === 'modal') {
-        const userMenu = document.getElementById('user-menu');
-        userMenu.classList.toggle('hidden');
-        userMenu.classList.toggle('show');
-    }
 
-}
-
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    modal.style.display = 'none';
-}

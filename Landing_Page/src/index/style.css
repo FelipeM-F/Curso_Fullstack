@@ -1,10 +1,5 @@
 @import url('../header/header.css');
 /* Estilos CSS aqui */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #4c558b;
-  margin: 0 auto;
-}
 
 
 
@@ -35,13 +30,11 @@ i {
   text-align: center;
   margin-bottom: 20px;
 }
-.container {
+.container-game{
   max-width: 100%;
   min-height: 330px;
   margin: 0 auto;
   background-image: url('../images/ghost-of-tsushima-poster.jpg');
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;  
@@ -134,10 +127,13 @@ i {
 }
 
 .info-image img {	
-    width: 110%;
+    width: 100%;
     display: block;
 }
-
+.info1{
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
 .info2 {
   height: 50%;
   background-color: rgb(197,230,249);
@@ -152,12 +148,13 @@ i {
   display: block;
 }
 
+
 .cadastro {  
-  color: #d81818;
+  color: rgb(195,3,80);
   background-color: #fff0f0;
   text-align: center;
   padding: 5px 10px;
-  border: 2px solid #d04c0f;
+  border: 2px solid rgb(254,61,106);
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   font-weight: bold;

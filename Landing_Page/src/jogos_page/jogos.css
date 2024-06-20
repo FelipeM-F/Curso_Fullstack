@@ -1,9 +1,5 @@
 @import url('../header/header.css');
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+
   
   
   main {
@@ -14,7 +10,7 @@ body {
   aside {
     max-width: 250px;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: white;
     border-right: 1px solid #ddd;
     float: left;
   }
@@ -25,7 +21,9 @@ body {
   }
   
   .game-card {
-    background-color: white;
+    font-family: 'Oswald', sans-serif;
+    background-color:white;
+    border: 2px solid rgb(195, 3, 80);
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-top: 16px;
@@ -85,6 +83,15 @@ body {
   }
   
   #pagination a {
+    color: white;
+    text-decoration-style: dashed;
+    font-weight: bold;
+    padding-inline: 10px;
+  }
+
+  #pagination :hover {
+    color: rgb(254, 61, 106);
+    font-weight: bold;
     padding-inline: 10px;
   }
   
@@ -106,7 +113,7 @@ body {
     text-align: center;
   }
   
-  #message {
+  #message-text {
     color: white;
     display: inline;
   }
