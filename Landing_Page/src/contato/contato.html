@@ -13,21 +13,7 @@
     <div id="header-container"></div>
     <main>
 
-        <div id="modal-login" class="modal">
-            <button type="button" class="button close-modal" onclick="closeModal('modal-login')">X</button>
-            <div id="register-form" class="modal-form">
-                <input type="text" id="nickname" name="nickname" placeholder="Username" required />
-                <input type="email" id="email" name="email" placeholder="E-mail" required />
-                <input type="password" id="password" name="password" placeholder="Password" required />
-                <button class="button" onclick="register()">Registrar</button>
-            </div>
-
-            <div id="login-form" class="modal-form">
-                <input type="email" id="loginEmail" name="loginEmail" placeholder="E-mail" required />
-                <input type="password" id="loginPassword" name="loginPassword" placeholder="Password" required />
-                <button type="button" class="button" onclick="performLogin()">Entrar</button>
-            </div>
-        </div>
+        <div id="modal-container"></div>
 
         <section class="contact-form">
             <h1>Contato</h1>
@@ -52,34 +38,12 @@
             </form>
         </section>
 
-        <div id="modal-message" class="modal">
-            <p id="message-text"></p>
-        </div>
 
     </main>
     <div id="footer-container"></div>
 
-    <script>
-        async function loadContent(url, elementId) {
-            const response = await fetch(url);
-            const content = await response.text();
-            document.getElementById(elementId).innerHTML = content;
-            return content;
-        }
-
-        Promise.all([
-            loadContent('../header/header.html', 'header-container'),
-            loadContent('../footer/footer.html', 'footer-container')
-        ]).then(() => {
-            document.getElementById('user-icon').addEventListener('click', () => {
-                const userMenu = document.getElementById('user-menu');
-                userMenu.classList.toggle('hidden');
-                userMenu.classList.toggle('show');
-            });
-        }).catch(error => {
-            console.error('Error loading content:', error);
-        });
-    </script>
+   
+    <script src="/src/config/header-footer-import.js"></script>
     <script src="/src/modal/modal.js"></script>
     <script src="contato.js"></script>
 </body>
