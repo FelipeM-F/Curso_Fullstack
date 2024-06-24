@@ -46,7 +46,7 @@ main {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #4c558b;
+    background-color: rgb(195, 3, 80);
     color: white;
     border-radius: 4px;
     font-size: 16px;
@@ -54,7 +54,7 @@ main {
     transition: background-color 0.3s ease;
 }
 .contato-enviar:hover {
-    background-color: #333c5a;
+    background-color: rgb(254, 61, 106);
 }
 
 .contato-enviar i {

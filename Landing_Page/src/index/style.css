@@ -35,7 +35,7 @@ i {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;  
-  overflow: hidden; /* Added this line */
+  overflow: hidden;
   position: relative;
 }
 .cards{
@@ -50,7 +50,7 @@ i {
 .card {
   width: 100px;
   height: 100px;
-  margin: 10px; /* Adjust margin for spacing */
+  margin: 10px; 
   border-radius: 10px;
   overflow: hidden;
   display: inline-block;  
@@ -73,7 +73,6 @@ i {
   clear: both;
 }
 
-/* Add the .clearfix class after the last card in each row */
 .container .row:after {
   content: "";
   display: block;
@@ -136,9 +135,6 @@ i {
   background-color: rgb(197,230,249);
 }
 
-.info-content :hover{
-  cursor: pointer;
-}
 
 .info-image2 img {	
   width: 110%;

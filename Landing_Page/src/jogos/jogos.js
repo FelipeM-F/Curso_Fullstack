@@ -145,18 +145,18 @@ function displayGames(page) {
         const sliderContainer = document.createElement('div');
         sliderContainer.className = 'slider-container';
         const sliderLabel = document.createElement('label');
-        let days = 1; // Definindo o valor inicial
+        let days = 1; 
         const slider = document.createElement('input');
         slider.type = 'range';
         slider.min = 1;
         slider.max = 60;
-        slider.value = slider.max-1; // Definindo o valor inicial do slider
+        slider.value = slider.max-1; 
         slider.addEventListener('input', () => {
             days = slider.max - (slider.value-1);
-            sliderLabel.textContent = 'Menor preço a: ' + days + ' dias'; // Atualizando o texto do rótulo com o novo valor do slider
+            sliderLabel.textContent = 'Menor preço a: ' + days + ' dias'; 
             minPriceLabel.textContent = 'Preço: ' + game.priceHistory[`DaysAgo${days}`];
         });
-        sliderLabel.textContent = 'Menor preço a : ' + (slider.max - slider.value) + ' dias'; // Definindo o texto inicial do rótulo
+        sliderLabel.textContent = 'Menor preço a : ' + (slider.max - slider.value) + ' dias';
         const minPriceLabel = document.createElement('h2');
         minPriceLabel.className = 'min-price';
         minPriceLabel.textContent = 'Preço: ' + game.priceHistory[`DaysAgo1`];
@@ -186,26 +186,14 @@ function toggleFavorite(icon) {
 
     if (icon.classList.contains('favorite')) {
         document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
-        openModalWithAutoClose('Jogo adicionado aos favoritos!'); // Chama a função para abrir o modal com mensagem e fechar automaticamente
-        // Você pode adicionar mais ações aqui, se necessário
+        openModalWithAutoClose('Jogo adicionado aos favoritos!');
     } else {
         document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
         openModalWithAutoClose('Jogo removido dos favoritos!');
-        // Se desejar, adicione ações quando um jogo for removido dos favoritos
     }
 }
 
-function openModalWithAutoClose(message) {
-    const modal = document.getElementById('modal-message');
-    const modalMessage = document.getElementById('message-text');
 
-    modalMessage.textContent = message;
-    modal.style.display = 'block';
-
-    setTimeout(() => {
-        closeModal('modal-message');
-    }, 1000);
-}
 
 function displayPagination() {
     const pagination = document.getElementById('pagination');
