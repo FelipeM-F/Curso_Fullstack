@@ -28,6 +28,8 @@ Bem-vindo ao repositório do **Save On Your Game**! Este é um projeto web desti
 
 ## Site hospedado no github pages
 
+[Save on Your Game](https://felipem-f.github.io/modelo_landing_page.github.io/)
+[Link do repositório:](https://github.com/FelipeM-F/modelo_landing_page.github.io) 
 
 ## Melhorias
 
