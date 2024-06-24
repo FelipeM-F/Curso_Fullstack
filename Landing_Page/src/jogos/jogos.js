@@ -1,73 +1,73 @@
 const games = [
     { 
         title: 'Red Dead Redemption II', 
-        cover: 'images/Red_Dead_Redemption_II.capa.jpg', 
-        prices: { Steam: 'R$ 119,96', 'Epic Games': 'R$ 119,96' },
+        cover: '../images/Red_Dead_Redemption_II.capa.jpg', 
+        prices: { Steam: 'R$ 119,96', 'Epic Games': 'R$ 119,96', 'Roskstar': 'R$ 300,00', 'Nuuvem': 'R$ 299,90' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'GTA V', 
-        cover: 'images/Grand_Theft_Auto_V_capa.png', 
+        cover: '../images/Grand_Theft_Auto_V_capa.png', 
         prices: { Steam: 'R$ 99,99', 'Epic Games': 'R$ 79,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Minecraft', 
-        cover: 'images/Minecraft_cover_capa.png', 
+        cover: '../images/Minecraft_cover_capa.png', 
         prices: { 'Minecraft.net': 'R$ 119,99', 'Microsoft Store': 'R$ 99,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'The Witcher 3', 
-        cover: 'images/Witcher_3_cover_art_capa.jpg', 
+        cover: '../images/Witcher_3_cover_art_capa.jpg', 
         prices: { Steam: 'R$ 39,99', 'GOG': 'R$ 29,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Cyberpunk 2077', 
-        cover: 'images/Cyberpunk_2077_box_art_capa.jpg', 
+        cover: '../images/Cyberpunk_2077_box_art_capa.jpg', 
         prices: { Steam: 'R$ 199,99', 'GOG': 'R$ 179,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Hades', 
-        cover: 'images/Hades_capa.jpg', 
+        cover: '../images/Hades_capa.jpg', 
         prices: { Steam: 'R$ 47,99', 'Epic Games': 'R$ 45,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Celeste', 
-        cover: 'images/celeste_capa.jpg', 
+        cover: '../images/celeste_capa.jpg', 
         prices: { Steam: 'R$ 36,99', 'GOG': 'R$ 33,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Stardew Valley', 
-        cover: 'images/Logo_of_Stardew_Valley.png', 
+        cover: '../images/Logo_of_Stardew_Valley.png', 
         prices: { Steam: 'R$ 24,99', 'GOG': 'R$ 22,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Hollow Knight', 
-        cover: 'images/Hollow_Knight_first_cover_art.webp.png', 
+        cover: '../images/Hollow_Knight_first_cover_art.webp.png', 
         prices: { Steam: 'R$ 27,99', 'GOG': 'R$ 25,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Sekiro: Shadows Die Twice', 
-        cover: 'images/Sekiro_art.jpg', 
+        cover: '../images/Sekiro_art.jpg', 
         prices: { Steam: 'R$ 199,99', 'Epic Games': 'R$ 179,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Control', 
-        cover: 'images/405px-Control_capa.png', 
+        cover: '../images/405px-Control_capa.png', 
         prices: { Steam: 'R$ 149,99', 'Epic Games': 'R$ 139,99' },
         priceHistory: generatePriceHistory()
     },
     { 
         title: 'Resident Evil 2', 
-        cover: 'images/RE2_remake_PS4_cover_art.png', 
+        cover: '../images/RE2_remake_PS4_cover_art.png', 
         prices: { Steam: 'R$ 159,99', 'Epic Games': 'R$ 149,99' },
         priceHistory: generatePriceHistory()
     }
@@ -145,18 +145,18 @@ function displayGames(page) {
         const sliderContainer = document.createElement('div');
         sliderContainer.className = 'slider-container';
         const sliderLabel = document.createElement('label');
-        let days = 1; // Definindo o valor inicial
+        let days = 1; 
         const slider = document.createElement('input');
         slider.type = 'range';
         slider.min = 1;
         slider.max = 60;
-        slider.value = slider.max-1; // Definindo o valor inicial do slider
+        slider.value = slider.max-1; 
         slider.addEventListener('input', () => {
             days = slider.max - (slider.value-1);
-            sliderLabel.textContent = 'Menor preço a: ' + days + ' dias'; // Atualizando o texto do rótulo com o novo valor do slider
+            sliderLabel.textContent = 'Menor preço a: ' + days + ' dias'; 
             minPriceLabel.textContent = 'Preço: ' + game.priceHistory[`DaysAgo${days}`];
         });
-        sliderLabel.textContent = 'Menor preço a : ' + (slider.max - slider.value) + ' dias'; // Definindo o texto inicial do rótulo
+        sliderLabel.textContent = 'Menor preço a : ' + (slider.max - slider.value) + ' dias';
         const minPriceLabel = document.createElement('h2');
         minPriceLabel.className = 'min-price';
         minPriceLabel.textContent = 'Preço: ' + game.priceHistory[`DaysAgo1`];
@@ -183,7 +183,17 @@ function displayGames(page) {
 
 function toggleFavorite(icon) {
     icon.classList.toggle('favorite');
+
+    if (icon.classList.contains('favorite')) {
+        document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
+        openModalWithAutoClose('Jogo adicionado aos favoritos!');
+    } else {
+        document.getElementById('message-text').innerText = 'Jogo adicionado aos favoritos!';
+        openModalWithAutoClose('Jogo removido dos favoritos!');
+    }
 }
+
+
 
 function displayPagination() {
     const pagination = document.getElementById('pagination');
@@ -213,9 +223,9 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
     const filteredGames = games.filter(game => game.title.toLowerCase().includes(searchQuery));
     
     if (filteredGames.length > 0) {
-        games.length = 0; // Clear the current games array
-        games.push(...filteredGames); // Add the filtered games to the array
-        currentPage = 1; // Reset to the first page
+        games.length = 0;
+        games.push(...filteredGames);
+        currentPage = 1; 
         displayGames(currentPage);
     } else {
         const resultado = document.getElementById('resultado');
@@ -225,31 +235,8 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
     }
 });
 
-document.getElementById('user-icon').addEventListener('click', () => {
-    const userMenu = document.getElementById('user-menu');
-    userMenu.classList.toggle('hidden');
-    userMenu.classList.toggle('show');
-});
 
-// Inicializa a exibição com a primeira página
+
 displayGames(currentPage);
 
-function openModal() {
-    const modal = document.getElementById('modal');
-    modal.style.display = 'block';
-    const userMenu = document.getElementById('user-menu');
-    userMenu.classList.toggle('hidden');
-    userMenu.classList.toggle('show');
 
-    modal.addEventListener('click', () => {
-        modal.style.display = 'block';
-    });
-}
-function closeModal() {
-    const closeBtn = document.getElementById('modal');
-
-    closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
-    });
-
-}
