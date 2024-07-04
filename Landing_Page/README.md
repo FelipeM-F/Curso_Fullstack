@@ -1,3 +1,7 @@
+# Objetivo da Branch
+
+Nesta branch foi colocado a primeira versão do código da página, sem armazenamento local e como um desafio proposto foi feita sem usar grid, flexbox e nenhum framework a nova versão será desenvolvida sem essas limitações e com uma revisão no layout.
+
 # Save On Your Game
 
 Bem-vindo ao repositório do **Save On Your Game**! Este é um projeto web destinado a ajudar os usuários a encontrar os melhores preços para seus jogos favoritos, comparando preços de diferentes lojas e oferecendo várias funcionalidades úteis.
