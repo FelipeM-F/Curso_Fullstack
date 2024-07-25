@@ -1,15 +1,4 @@
-async function loadModal(url, elementId) {
-  const response = await fetch(url);
-  const content = await response.text();
-  document.getElementById(elementId).innerHTML = content;
-  return content;
-}
 
-Promise.all([loadModal("/src/modal/modal.html", "modal-container")]).catch(
-  (error) => {
-    console.error("Error loading content:", error);
-  }
-);
 
 function register(event) {
   event.preventDefault();
@@ -19,7 +8,7 @@ function register(event) {
   const password = document.getElementById("password").value;
 
   const userData = JSON.parse(localStorage.getItem("users")) || [];
-  userData.push({ nickname, email, password });
+  userData.push({ nickname, email, password, favorites: [] });
   localStorage.setItem("users", JSON.stringify(userData));
 
   console.log("Registro de usuário:", { nickname, email, password });
@@ -35,15 +24,17 @@ function login(event) {
 
   const users = JSON.parse(localStorage.getItem("users")) || [];
   const user = users.find(
-    (u) => u.email === loginEmail && u.password === loginPassword
+      (u) => u.email === loginEmail && u.password === loginPassword
   );
-  const storedEmail = user?.email;
-  const storedPassword = user?.password;
 
-  if (loginEmail === storedEmail && loginPassword === storedPassword) {
-    openModalWithAutoClose("Login realizado com sucesso!");
+  if (user) {
+      openModalWithAutoClose("Login realizado com sucesso!");
+      const loggedUser = { nickname: user.nickname, email: user.email };
+      localStorage.setItem("loggedUser", JSON.stringify(loggedUser));
+      window.location.reload();
+      
   } else {
-    openModalWithAutoClose("Usuário ou senha inválido!");
+      openModalWithAutoClose("Usuário ou senha inválido!");
   }
 
   console.log("Login do usuário:", { loginEmail, loginPassword });
@@ -51,9 +42,14 @@ function login(event) {
   form.reset();
 }
 
+
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  modal.style.display = "block";
+  if (modal) {
+      modal.style.display = 'block'; // Certifique-se de que o elemento existe
+  } else {
+      console.error('Modal with ID "' + modalId + '" not found.');
+  }
 }
 
 function closeModal(modalId) {
@@ -61,8 +57,10 @@ function closeModal(modalId) {
   modal.style.display = "none";
 }
 
+
 function enviarFormulario(event) {
   event.preventDefault();
+  openModalWithAutoClose('Obrigado pela sua mensagem, em breve retornaremos!');
 }
 
 function openModalWithAutoClose(message) {
@@ -75,4 +73,32 @@ function openModalWithAutoClose(message) {
   setTimeout(() => {
     modal.style.display = "none";
   }, 2000);
+}
+
+function excluirUsuário() {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
+
+  if (!loggedUser) {
+    console.error("Nenhum usuário logado.");
+    return;
+  }
+
+  const userIndex = users.findIndex((user) => user.email === loggedUser.email);
+
+  if (userIndex === -1) {
+    console.error("Usuário logado não encontrado na lista de usuários.");
+    return;
+  }
+  
+  users.splice(userIndex, 1);
+  localStorage.setItem("users", JSON.stringify(users));
+  localStorage.removeItem("loggedUser");
+  openModalWithAutoClose('Usuário excluído!');
+  window.location.reload();
+}
+
+function sair() {
+  localStorage.removeItem("loggedUser");
+  window.location.reload();
 }
