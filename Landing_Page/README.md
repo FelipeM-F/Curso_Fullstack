@@ -35,7 +35,4 @@ Bem-vindo ao repositório do **Save On Your Game**! Este é um projeto web desti
 ## Melhorias
 
 - **Melhoria do Layout**
-- **Criação de um banco de dados**
-- **Implementação dos filtors de busca**
-- **Criar um arquivo de rotas**
 - **Implementar a tecnologia de web scrapping para buscar valores reais**
