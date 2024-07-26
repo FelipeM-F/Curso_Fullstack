@@ -32,45 +32,25 @@ function filterGames() {
   const selectedPrice = formData.get("price");
   showFavoritesOnly = formData.has("favorites");
 
-  filteredGames = games.filter((game) => {
-    const gameStores = Object.keys(game.prices);
-    const matchesStore =
-      selectedStores.length === 0 ||
-      selectedStores.some((store) => gameStores.includes(store));
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
-    let matchesPrice = true;
-    if (selectedPrice) {
-      const gamePrice = parseFloat(
-        game.priceHistory.DaysAgo1.replace("R$", "").replace(",", ".")
-      );
-      if (selectedPrice === "low") {
-        matchesPrice = gamePrice < 50;
-      } else if (selectedPrice === "medium") {
-        matchesPrice = gamePrice >= 50 && gamePrice <= 100;
-      } else if (selectedPrice === "high") {
-        matchesPrice = gamePrice > 100;
-      }
-    }
-
-    const users = JSON.parse(localStorage.getItem("users")) || [];
-    const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
-  
-    if (!loggedUser) {
-      console.error("Nenhum usuário logado.");
-      return;
-    }
-  
-    const userIndex = users.findIndex((user) => user.email === loggedUser.email);
-  
+  let favoriteGames = [];
+  if (!loggedUser) {
+    console.error("Nenhum usuário logado.");
+  } else {
+    const userIndex = users.findIndex(user => user.email === loggedUser.email);
     if (userIndex === -1) {
       console.error("Usuário logado não encontrado na lista de usuários.");
-      return;
+    } else {
+      favoriteGames = users[userIndex].favorites || [];
     }
-  
-    const favoriteGames = users[userIndex].favorites || [];
-    const isFavorite = favoriteGames.includes(game.title);
-    console.log("isFavorite:", isFavorite);
-    const matchesFavorites = !showFavoritesOnly || isFavorite;
+  }
+
+  filteredGames = games.filter((game) => {
+    const matchesStore = filterByStore(game, selectedStores);
+    const matchesPrice = filterByPrice(game, selectedPrice);
+    const matchesFavorites = filterByFavorites(game, favoriteGames);
 
     return matchesStore && matchesPrice && matchesFavorites;
   });
@@ -78,6 +58,30 @@ function filterGames() {
   currentPage = 1;
   displayGames(currentPage);
 }
+
+function filterByStore(game, selectedStores) {
+  const gameStores = Object.keys(game.prices);
+  return selectedStores.length === 0 || selectedStores.some(store => gameStores.includes(store));
+}
+
+function filterByPrice(game, selectedPrice) {
+  if (!selectedPrice) return true;
+
+  const gamePrice = parseFloat(game.priceHistory.DaysAgo1.replace("R$", "").replace(",", "."));
+  const priceRanges = {
+    low: gamePrice < 50,
+    medium: gamePrice >= 50 && gamePrice <= 100,
+    high: gamePrice > 100
+  };
+
+  return priceRanges[selectedPrice];
+}
+
+function filterByFavorites(game, favoriteGames) {
+  const isFavorite = favoriteGames.includes(game.title);
+  return !showFavoritesOnly || isFavorite;
+}
+
 
 export function displayGames(page) {
   const start = (page - 1) * itemsPerPage;
