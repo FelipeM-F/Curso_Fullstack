@@ -1,0 +1,166 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+header {
+  padding-inline: 10%;
+  background-color: #0f0d3d;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; 
+}
+
+header nav {
+  flex: 1;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-toggler{
+  background-color: white;
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: rgb(254, 61, 106);
+  font-weight: bolder;
+}
+
+.nav-link{
+  color: white;
+}
+
+.nav-link:focus{
+  color: white;
+
+}
+.nav-link:hover {
+  color: rgb(253, 3, 3);
+
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.21);
+}
+
+header nav ul li {
+  margin: 0 1rem; 
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.625rem; 
+  transition: color 0.3s ease;
+}
+
+
+header .page-logo {
+  flex: 0 1 10%;
+}
+
+header .page-logo img {
+  width: 6.25rem;
+}
+
+header h1.title {
+  flex: 1;
+  order: 3;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  margin: 1rem 0; 
+}
+
+header h1.title a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.8s, color 0.2s;
+}
+
+header h1.title a:hover {
+  transform: scale(1.1);
+  color: rgb(254, 61, 106);
+}
+
+header h1.title .highlight {
+  color: rgb(195, 3, 80);
+  background-color: #fff0f0;
+  padding: 0.3125rem 0.625rem; 
+  border: 0.125rem solid rgb(254, 61, 106); 
+  border-radius: 0.3125rem; 
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2); 
+  font-weight: bold;
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.8s, background-color 0.2s;
+}
+
+#search-form {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+.busca {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+
+
+  header .page-logo,
+  header h1.title {
+      text-align: center;
+      order: initial;
+  }
+
+  header nav ul {
+      flex-direction: column;
+      gap: 0.625rem;
+      align-items: center;
+  }
+
+  header nav ul li {
+      margin: 0.625rem 0; 
+  }
+
+  #search-form {
+    margin-bottom: 20px;
+  }
+}

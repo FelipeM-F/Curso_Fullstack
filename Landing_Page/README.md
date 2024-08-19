@@ -1,43 +1,38 @@
-# Comparador de Preços de Jogos
+# Save On Your Game
 
-Este é um projeto simples de uma landing page que exibe preços de jogos de diferentes plataformas. Atualmente, ele não possui nenhuma funcionalidade de JavaScript implementada, mas serve como base para um comparador de preços de jogos.
+Bem-vindo ao repositório do **Save On Your Game**! Este é um projeto web destinado a ajudar os usuários a encontrar os melhores preços para seus jogos favoritos, comparando preços de diferentes lojas e oferecendo várias funcionalidades úteis.
 
-## Descrição
+## Visão Geral
 
-A página inicial do projeto exibe alguns jogos em destaque, cada um com sua capa e os preços em diferentes lojas. A estrutura do HTML e o CSS estão prontos para receber funcionalidades futuras.
+**Save On Your Game** é uma plataforma que permite aos usuários buscar jogos, comparar preços de diversas lojas e acompanhar o histórico de preços. Com uma interface intuitiva, os usuários podem facilmente adicionar jogos aos seus favoritos, aplicar filtros e buscar por jogos específicos.
 
-### Tecnologias Utilizadas
+## Funcionalidades
 
-- HTML5
-- CSS3
+- **Comparação de Preços:** Compare preços de jogos em diferentes lojas como Steam, Epic Games, GOG, e Microsoft Store.
+- **Histórico de Preços:** Visualize o histórico de preços dos últimos 60 dias para cada jogo.
+- **Favoritos:** Adicione e remova jogos da sua lista de favoritos.
+- **Cadastro e Login:** Cadastre-se e faça login para acessar funcionalidades exclusivas.
 
-## Estrutura do Projeto
+## Tecnologias Utilizadas
 
-- `index.html`: Contém a estrutura principal da página.
-- `style.css`: Contém os estilos utilizados na página.
-- `images/`: Pasta que contém as imagens das capas dos jogos.
+- **HTML:** Estrutura das páginas web.
+- **CSS:** Estilização das páginas web.
+- **JavaScript:** Funcionalidades dinâmicas e interativas.
+- **Font Awesome:** Ícones vetoriais.
+- **Google Fonts:** Fonte Oswald.
 
-## Como Usar
+## Instalação
 
 1. Clone o repositório:
+2. Abra o arquivo index.html no seu navegador preferido.
 
-2. Navegue até o diretório do projeto:
+## Site hospedado no github pages
 
-3. Abra o arquivo `index.html` no seu navegador de preferência.
+**[Site: Save on Your Game](https://felipem-f.github.io/modelo_landing_page.github.io/)**
 
-## Funcionalidades Futuras
+[Link do repositório](https://github.com/FelipeM-F/modelo_landing_page.github.io) 
 
-- Adicionar JavaScript para buscar os preços dos jogos dinamicamente.
-- Implementar integração com APIs de lojas de jogos.
-- Melhorar o layout responsivo para dispositivos móveis.
+## Melhorias
 
-## Contribuição
-
-Sinta-se à vontade para contribuir com melhorias e novas funcionalidades. Para contribuir:
-
-1. Faça um fork do projeto.
-2. Crie uma branch para a sua feature (`git checkout -b minha-feature`).
-3. Faça commit das suas alterações (`git commit -am 'Adiciona minha feature'`).
-4. Envie para a branch (`git push origin minha-feature`).
-5. Abra um Pull Request.
-
+- **Melhoria do Layout**
+- **Implementar a tecnologia de web scrapping para buscar valores reais**
