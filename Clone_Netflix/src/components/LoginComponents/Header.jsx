@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import logo from '/logo.png'; 
 const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   display: block;
   padding: 20px;
