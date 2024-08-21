@@ -1,6 +1,6 @@
 // src/components/MovieCategory.jsx
 import React, { useEffect, useState } from 'react';
-import { getMoviesByCategory } from '../../services/MovieAPI';
+import { getMoviesByCategory } from '../../services/MovieAPIt b';
 import styled from 'styled-components';
 
 const Row = styled.div`

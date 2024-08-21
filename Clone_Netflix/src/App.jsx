@@ -5,8 +5,6 @@ import { useAuth } from "./services/AuthContext.jsx";
 import Home from "./components/Home.jsx";
 
 
-
-
 function App() {
 
   const { isAuthenticated, login } = useAuth();

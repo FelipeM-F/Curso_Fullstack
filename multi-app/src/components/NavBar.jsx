@@ -84,7 +84,7 @@ const NavBar = ({ handleAccess, logout }) => {
           <FaNetworkWired />
           IP Address Finder
         </StyledLink>
-        <StyledLink onClick={() => handleAccess(2, "MovieSearchEngine")}>
+        <StyledLink onClick={() => handleAccess(2, "MovieSearch")}>
           <FaSearch />
           Movie Search
         </StyledLink>
