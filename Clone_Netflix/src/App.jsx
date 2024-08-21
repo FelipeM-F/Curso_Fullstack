@@ -1,10 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginContainer from "./components/Login.jsx";
-import { useAuth } from "./components/AuthContext.jsx";
+import { useAuth } from "./services/AuthContext.jsx";
 import Home from "./components/Home.jsx";
-
-
 
 
 function App() {

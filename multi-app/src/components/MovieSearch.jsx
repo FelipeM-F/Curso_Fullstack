@@ -101,7 +101,7 @@ const MovieCard = styled.div`
   }
 `;
 
-const MovieSearchEngine = () => {
+const MovieSearch = () => {
   const { movies, searchMovies, error } = useMovieInfo(); // Desestrutura as funções e o estado de useMovieInfo
   const [query, setQuery] = useState(''); // Define o estado para a consulta de busca
 
@@ -123,10 +123,13 @@ const MovieSearchEngine = () => {
       {error && <p style={{ color: 'red' }}>{error}</p>} {/* Exibe mensagens de erro, se houver */}
       <MoviesContainer>
         {movies && movies.map((movie) => ( // Verifica se há filmes e os mapeia para exibir MovieCard
-          <MovieCard key={movie.imdbID}>
-            <img src={movie.Poster} alt={`${movie.Title} Poster`} /> {/* Exibe o pôster do filme */}
-            <h3>{movie.Title}</h3> {/* Exibe o título do filme */}
-            <p>{movie.Year}</p> {/* Exibe o ano do filme */}
+          <MovieCard key={movie.id}> {/* Use a propriedade 'id' como chave, pois 'imdbID' pode não existir */}
+            <img 
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+              alt={`${movie.title} Poster`} 
+            /> {/* Exibe o pôster do filme */}
+            <h3>{movie.title}</h3> {/* Exibe o título do filme */}
+            <p>{movie.release_date.split('-')[0]}</p> {/* Exibe o ano do filme */}
           </MovieCard>
         ))}
       </MoviesContainer>
@@ -134,4 +137,4 @@ const MovieSearchEngine = () => {
   );
 };
 
-export default MovieSearchEngine; 
+export default MovieSearch;

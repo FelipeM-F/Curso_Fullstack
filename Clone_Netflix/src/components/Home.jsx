@@ -1,14 +1,20 @@
+// src/pages/HomePage.jsx
+import React from 'react';
+import styled from 'styled-components';
+import MovieCategory from '../components/HomeComponents/MovieCategories.jsx';
 
-const Home = () => {
+const Container = styled.div`
+  padding: 20px;
+  background-color: #141414;
+`;
+
+const HomePage = () => {
   return (
-    <div>
-      <h1>Bem vindo a Netflix</h1>
-      <p>Aqui você encontra todos os seus filmes e série favoritos</p>
-      <button>Assistir</button>
-      <button>Minha lista</button>
-      <button>Sugestões</button>
-    </div>
+    <Container>
+      <MovieCategory category="popular" />
+      <MovieCategory category="top_rated" />
+    </Container>
   );
 };
 
-export default Home;
+export default HomePage;

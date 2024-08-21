@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { FaArrowLeft } from "react-icons/fa";
 import QRCodeGenerator from "./components/QRCodeGenarator";
 import IPAddressFinder from "./components/IPAddressFinder";
-import MovieSearchContainer from "./components/MovieSearchContainer";
+import MovieSearch from "./components/MovieSearch";
 import TodoApp from "./components/TodoApp";
 import QuizApp from "./components/QuizApp";
 import LanguageTranslator from "./components/LanguageTranslator";
@@ -97,7 +97,7 @@ const App = () => {
   const components = {
     QRCodeGenerator,
     IPAddressFinder,
-    MovieSearchContainer,
+    MovieSearch,
     TodoApp,
     QuizApp,
     LanguageTranslator,
