@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import logo from '/logo.png'; 
+import logo from '/logo.png';
+
 const Container = styled.div`
   width: 100%;
   display: block;
@@ -17,7 +18,7 @@ const LogoImage = styled.img`
   height: 50px; // Adjust the size as needed
 `;
 
-const Footer = () => {
+const Header = () => {
   return (
     <Container>
       <NetflixIcon href="#">
@@ -27,4 +28,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Header;

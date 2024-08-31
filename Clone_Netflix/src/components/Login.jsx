@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Footer from "./LoginComponents/Footer";
+import Footer from "./Footer";
 import Header from "./LoginComponents/Header";
 
 const Container = styled.div`
