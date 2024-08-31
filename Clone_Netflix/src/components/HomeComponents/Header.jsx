@@ -1,16 +1,16 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaSignOutAlt } from "react-icons/fa";
 import logo from "/logo.png";
 import MovieSearch from "../SearchComponents/SearchInput";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../services/AuthContext"; 
 
 const Container = styled.div`
   width: auto;
   display: flex;
   padding: 20px;
   background-color: transparent;
-  margin: auto;
   align-items: center;
 `;
 
@@ -31,6 +31,13 @@ const HeaderLink = styled.a`
 `;
 
 const SearchIcon = styled(FaSearch)`
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 15px;
+`;
+
+const LogoutIcon = styled(FaSignOutAlt)`
   color: #fff;
   font-size: 24px;
   cursor: pointer;
@@ -62,15 +69,14 @@ const RightAlign = styled.div`
 const Header = () => {
   const [showSearch, setShowSearch] = useState(false);
   const navigate = useNavigate();
-  const [searchResults, setSearchResults] = useState([]);
-
+  const { logout } = useAuth(); 
   const toggleSearch = () => {
     setShowSearch((prevState) => !prevState);
   };
 
-  const handleSearch = (results) => {
-    setSearchResults(results);
-    navigate("/search-results", { state: { results } });
+  const handleLogout = () => {
+    logout(); 
+    navigate("/login"); 
   };
 
   return (
@@ -79,14 +85,15 @@ const Header = () => {
         <NetflixIcon href="/">
           <LogoImage src={logo} alt="Netflix" />
         </NetflixIcon>
-        <HeaderLink href="#">Series</HeaderLink>
-        <HeaderLink href="#">Filmes</HeaderLink>
+        <HeaderLink href="/series">Series</HeaderLink>
+        <HeaderLink href="/">Filmes</HeaderLink>
       </LeftAlign>
       <RightAlign>
         <SearchIcon onClick={toggleSearch} />
         <SearchInput $show={showSearch}>
-          <MovieSearch onSearch={handleSearch} />
+          <MovieSearch />
         </SearchInput>
+        <LogoutIcon onClick={handleLogout} />
       </RightAlign>
     </Container>
   );
