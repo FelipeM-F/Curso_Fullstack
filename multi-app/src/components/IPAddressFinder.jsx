@@ -2,7 +2,6 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ipAdress from '../services/IpAdressEngine';
 
-// Define o estilo do container principal
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,7 +15,6 @@ const Container = styled.div`
   margin: 50px auto;
 `;
 
-// Define o estilo do título
 const Title = styled.h2`
   color: #333;
   margin-bottom: 20px;
@@ -24,7 +22,6 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-// Define o estilo do campo de entrada
 const Input = styled.input`
   margin-bottom: 20px;
   padding: 12px;
@@ -41,7 +38,6 @@ const Input = styled.input`
   }
 `;
 
-// Define o estilo do botão
 const Button = styled.button`
   padding: 12px 20px;
   background-color: #007bff;
@@ -57,7 +53,6 @@ const Button = styled.button`
   }
 `;
 
-// Define o estilo do container de resultados
 const ResultsContainer = styled.div`
   margin-top: 20px;
   padding: 20px;
