@@ -1,3 +1,10 @@
+
+# Exercícios de Estruturas de Dados
+
+Neste conjunto de exercícios, vamos explorar algumas das estruturas de dados fundamentais em ciência da computação, como listas encadeadas e filas. Cada exercício simula um caso prático onde essas estruturas de dados podem ser aplicadas, desde gerenciadores de tarefas até sistemas de controle de impressão e edição de texto.
+
+O objetivo é implementar funcionalidades típicas utilizando listas simplesmente encadeadas, listas duplamente encadeadas e filas, de forma que o entendimento sobre como essas estruturas operam fique claro. Esses conceitos são essenciais para o desenvolvimento de aplicações eficientes e escaláveis.
+
 # Lista Simplesmente Encadeada
 
 ## 1. Gerenciador de Tarefas
