@@ -25,12 +25,12 @@ public class Tarefa {
         this.descricao = descricao;
     }
 
-    public boolean isTarefaConcluida() {
+    public boolean getStatus() {
         return tarefaConcluida;
     }
 
-    public void setTarefaConcluida(boolean tarefaConcluida) {
-        this.tarefaConcluida = tarefaConcluida;
+    public void setTarefaConcluida() {
+        this.tarefaConcluida = true;
     }
 
     @Override
