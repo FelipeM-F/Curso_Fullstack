@@ -1,34 +1,47 @@
-  
-import { createContext, useState, useContext,  useEffect} from "react";
+import { createContext, useState, useContext, useEffect } from "react";
+import { checkingJwtToken } from "./JwtTokenGenerator";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
+  const [loading, setLoading] = useState(true); // Estado de carregamento
 
   const login = (token) => {
     setIsAuthenticated(true);
-    setToken(token);  // Armazena o token
-    localStorage.setItem('authToken', token); // Armazena o token no localStorage
-
+    setToken(token);
+    localStorage.setItem('authToken', token);
   };
 
   const logout = () => {
     setIsAuthenticated(false);
     setToken(null);
-    localStorage.removeItem('authToken'); // Remove o token do localStorage
+    localStorage.removeItem('authToken');
   };
 
-  const checkAuth = () => {
+  const checkAuth = async () => {
     const storedToken = localStorage.getItem('authToken');
     if (storedToken) {
-      setIsAuthenticated(true);
-      setToken(storedToken);
+      try {
+        const payload = await checkingJwtToken(storedToken);
+        if (payload) {
+          setIsAuthenticated(true);
+          setToken(storedToken);
+        } else {
+          setIsAuthenticated(false);
+          setToken(null);
+        }
+      } catch (error) {
+        console.error("Error verifying token:", error);
+        setIsAuthenticated(false);
+        setToken(null);
+      }
     } else {
       setIsAuthenticated(false);
       setToken(null);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -36,7 +49,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, token, login, logout, checkAuth }}>
+    <AuthContext.Provider value={{ isAuthenticated, token, login, logout, checkAuth, loading }}>
       {children}
     </AuthContext.Provider>
   );

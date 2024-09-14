@@ -1,5 +1,4 @@
-import { useState } from 'react'; // Importa o hook useState do React
-import axios from 'axios'; // Importa a biblioteca axios para fazer requisições HTTP
+import axios from 'axios'; 
 
 const apiKey = 'bfb3ab6e44a3c35fa789df90c885c477';
 
@@ -7,43 +6,76 @@ const tmdb = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     params: {
         api_key: apiKey,
-        language: 'pt-BR', // Pode ajustar o idioma conforme necessário
+        language: 'pt-BR',
     },
 });
 
-// Função para buscar filmes por categoria
-export const getMoviesByCategory = async (category) => {
-    const response = await tmdb.get(`/movie/${category}`);
-    return response.data.results;
-};
 
-// Custom hook para buscar informações sobre filmes
-export const useMovieInfo = () => {
-    const [movies, setMovies] = useState([]); // Define o estado para armazenar os filmes
-    const [error, setError] = useState(null); // Define o estado para armazenar erros
-
-    // Função para buscar filmes
-    const searchMovies = async (query) => {
-        try {
-            const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+export const getMoviesByCategory = async (categoryOrGenreId) => {
+    try {
+        let response;
+        if (categoryOrGenreId === "popular" || categoryOrGenreId === "top_rated") {
+            response = await tmdb.get(`/movie/${categoryOrGenreId}`);
+        } else {
+            response = await tmdb.get('/discover/movie', {
                 params: {
-                    api_key: apiKey,
-                    query: query,
+                    with_genres: categoryOrGenreId,
                 },
             });
-            console.log(response.data.results);
-            setMovies(response.data.results); // Armazena os dados dos filmes no estado movies
-        } catch (error) {
-            console.error("Error fetching movie data:", error); // Exibe um erro no console em caso de falha
-            setError("Error fetching movie data"); // Armazena a mensagem de erro no estado error
         }
-    };
 
-    return {
-        movies,
-        searchMovies,
-        error,
-    };
+        return response.data.results;
+    } catch (error) {
+        console.error("Error fetching movies by category or genre:", error);
+        return [];
+    }
+};
+
+export const getMovieDetails = async (id) => {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`);
+    const data = await response.json();
+    return data;
+  };
+
+  export const getMovieVideos = async (id) => {
+    try {
+        const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${apiKey}`);
+        const data = await response.json();
+        // Verifica se há vídeos e se eles são do tipo "Trailer"
+        const trailer = data.results.find(video => video.type === "Trailer" && video.site === "YouTube");
+        return trailer;
+    } catch (error) {
+        console.error("Error fetching movie videos:", error);
+        return null;
+    }
+};
+
+
+export const searchMovies = async (query) => {
+    try {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/search/movie`,
+        {
+          params: {
+            api_key: apiKey,
+            query: query,
+          },
+        }
+      );
+      return response.data.results;
+    } catch (error) {
+      console.error("Erro ao buscar filmes:", error);
+    }
+  };
+
+  export const getSimilarMovies = async (id) => {
+    try {
+        const response = await tmdb.get(`https://api.themoviedb.org/3/movie/${id}/recommendations`);
+        return response.data.results;
+    } catch (error) {
+        console.error("Error fetching similar movies:", error);
+        return [];
+    }
 };
 
 

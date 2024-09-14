@@ -1,6 +1,7 @@
-import { useState } from 'react'; 
 import axios from 'axios';
+import { useState } from 'react';
 import styled from 'styled-components';
+import translateService from '../services/TranslateService';
 
 // Define o estilo dos componentes de apresentação
 const Container = styled.div`
@@ -86,27 +87,15 @@ const TranslatedText = styled.p`
   text-align: center;
 `;
 
-// Serviço de tradução separado
-const translateService = async (text, sourceLang, targetLang) => {
-  try {
-    const response = await axios.get('https://api.mymemory.translated.net/get', {
-      params: {
-        q: text,
-        langpair: `${sourceLang}|${targetLang}`,
-      },
-    });
-    return response.data.responseData.translatedText;
-  } catch (error) {
-    throw new Error('Erro ao traduzir o texto');
-  }
-};
+// Serviço de tradução usando a API do Google Translate
+
 
 // Componente principal LanguageTranslator
 const LanguageTranslator = () => {
   const [text, setText] = useState('');
   const [translatedText, setTranslatedText] = useState('');
-  const [sourceLang, setSourceLang] = useState('en');
-  const [targetLang, setTargetLang] = useState('es');
+  const [sourceLang, setSourceLang] = useState('auto');
+  const [targetLang, setTargetLang] = useState('en');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
@@ -116,13 +105,14 @@ const LanguageTranslator = () => {
       setError('Por favor, insira o texto para tradução.');
       return;
     }
-
+  
     setLoading(true);
     setError('');
     setTranslatedText('');
-
+  
     try {
       const translation = await translateService(text, sourceLang, targetLang);
+      console.log(translation); // Adicionado para verificar se a tradução está chegando corretamente
       setTranslatedText(translation);
     } catch (err) {
       setError(err.message);
@@ -137,6 +127,7 @@ const LanguageTranslator = () => {
       <div>
         <Label>Língua de Origem:</Label>
         <Select value={sourceLang} onChange={(e) => setSourceLang(e.target.value)}>
+          <option value="auto">Automático</option>
           <option value="en">Inglês</option>
           <option value="es">Espanhol</option>
           <option value="fr">Francês</option>
