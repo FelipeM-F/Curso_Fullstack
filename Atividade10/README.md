@@ -48,12 +48,6 @@ Para rodar este projeto, você precisará do seguinte:
    - `04_Alunos_turma_1.sql`
    - `05_Horário_Patolino.sql`
 
-2. **Conectar ao Banco de Dados**:
-   Após criar o banco de dados e inserir os dados, você pode conectar-se a ele usando seu cliente MySQL, utilizando as credenciais apropriadas.
-
-3. **Consultar o Banco de Dados**:
-   Você pode usar comandos SQL para consultar os dados armazenados, como visualizar informações sobre professores, alunos e turmas.
-
 ## Instruções da Atividade
 Dado o modelo relacional abaixo que visa resolver uma alocação de alunos e utilizando o aplicativo MySQL Workbench para modelar, construir e executar os comandos SQL, responda as perguntas utilizando comandos SQL que atendam o solicitado:
 
