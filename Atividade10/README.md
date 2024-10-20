@@ -1,4 +1,4 @@
-# Projeto Escola de Informática
+# Projeto Escola
 
 Este projeto é um sistema de gerenciamento escolar desenvolvido em SQL, projetado para armazenar e gerenciar informações sobre professores, alunos, turmas e matrículas. Ele permite o registro de dados, consultas e atualizações de informações no banco de dados.
 
