@@ -1,3 +1,9 @@
+# Fluxograma API Usuário
+
+## 
+Fluxograma da api de autenticação e busca de usuário desenvolvido na atividade 13.
+
+
 ```mermaid
 flowchart TD
     A["Início"] --> B["Requisição de Autenticação"]
