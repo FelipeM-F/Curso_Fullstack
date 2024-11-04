@@ -1,3 +1,4 @@
+```mermaid
 flowchart TD
     A["Início"] --> B["Requisição de Autenticação"]
     B --> C{"Usuário Existente?"}
